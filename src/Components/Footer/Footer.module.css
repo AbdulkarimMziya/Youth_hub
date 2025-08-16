@@ -1,0 +1,137 @@
+.footer {
+  color: white;
+}
+
+.footerTop {
+  max-width: 800px;
+  padding: 2rem 0;
+  margin: 0 auto;
+  text-align: center;
+  background-color: blueviolet;
+  border-radius: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.footerHeading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.footerContent {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.footerCta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 140px;
+  border: 2px solid transparent;
+}
+
+.accent {
+  background-color: #ff6b35;
+  color: white;
+  border-color: #ff6b35;
+}
+
+.accent:hover {
+  background-color: #e55a2b;
+  border-color: #e55a2b;
+}
+
+.secondary {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.secondary:hover {
+  background-color: white;
+  color: blueviolet;
+}
+
+.footerBottom {
+  padding-block: 4rem;
+  background-color: darkcyan;
+  box-shadow: 0 0 0 200px darkcyan;
+}
+
+.footerBottom .wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.spaceBetween {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+.highlight {
+  color: #cc2936;
+  font-weight: bolder;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
+}
+
+.navLink {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLink:hover {
+  color: #ff6b35;
+}
+
+.copyright {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.copyright p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}

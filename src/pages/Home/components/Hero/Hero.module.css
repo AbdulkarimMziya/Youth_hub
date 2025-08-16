@@ -1,0 +1,90 @@
+.hero {
+  height: 400px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  filter: brightness(0.4) contrast(1.2) saturate(0.8);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: -1;
+}
+
+.companyName {
+  color: white;
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+.companySlogan {
+  color: white;
+  font-size: 3rem;
+  margin: 20px 0;
+  text-align: center;
+  font-weight: bold;
+}
+
+.callToAction {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btn {
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  border: 2px solid transparent;
+}
+
+.primary {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+
+.primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.secondary {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.secondary:hover {
+  background-color: white;
+  color: #333;
+}

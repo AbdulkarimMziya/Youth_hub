@@ -1,0 +1,17 @@
+/* Main app styles */
+.app {
+  min-height: 100vh;
+}
+
+main {
+  min-height: 80vh;
+}
+
+.certification-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 10px 0;
+  border: 3px solid black;
+}

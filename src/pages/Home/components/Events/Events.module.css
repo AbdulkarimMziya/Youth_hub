@@ -1,0 +1,20 @@
+.eventsSection {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+  border: 2px solid black;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.eventsTitle {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+}
