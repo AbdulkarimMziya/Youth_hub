@@ -1,14 +1,11 @@
 import './styles/globals.css';
 import './App.css';
-import MainLayout from './layouts/MainLayout/MainLayout';
-import Home from './pages/Home/Home';
+import AppRouter from './routes/AppRouter';
 
 function App() {
   return (
     <div className="app">
-      <MainLayout>
-        <Home />
-      </MainLayout>
+      <AppRouter />
     </div>
   );
 }
