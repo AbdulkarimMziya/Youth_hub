@@ -1,4 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
+import { useState } from 'react';
 import styles from './Header.module.css';
 import logo from '../../assets/logo-transparent.png';
 import { getNavRoutes } from '../../routes/routes';
@@ -6,6 +7,15 @@ import { getNavRoutes } from '../../routes/routes';
 const Header = () => {
   const location = useLocation();
   const navRoutes = getNavRoutes();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
     <header className={styles.header}>
@@ -35,7 +45,40 @@ const Header = () => {
       <div className={styles.menuContainer}>
         <Link to="/donate" className={`${styles.menuItem} ${styles.btn}`}>Donate</Link>
         <div className={`${styles.menuItem} ${styles.btn}`}>Join</div>
-        <div className={`${styles.menuItem} ${styles.btn}`}>Menu</div>
+        
+        {/* Hamburger Menu */}
+        <div className={styles.hamburgerContainer}>
+          <button 
+            className={`${styles.hamburgerBtn} ${isMenuOpen ? styles.open : ''}`}
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span className={styles.hamburgerLine}></span>
+            <span className={styles.hamburgerLine}></span>
+            <span className={styles.hamburgerLine}></span>
+          </button>
+          
+          {/* Dropdown Menu */}
+          {isMenuOpen && (
+            <div className={styles.dropdownMenu}>
+              <div className={styles.dropdownOverlay} onClick={closeMenu}></div>
+              <nav className={styles.dropdownNav}>
+                {navRoutes.map(route => (
+                  <Link 
+                    key={route.path}
+                    to={route.path} 
+                    className={`${styles.dropdownLink} ${
+                      location.pathname === route.path ? styles.activeDropdown : ''
+                    }`}
+                    onClick={closeMenu}
+                  >
+                    {route.name}
+                  </Link>
+                ))}
+              </nav>
+            </div>
+          )}
+        </div>
       </div>
     </header>
   );
