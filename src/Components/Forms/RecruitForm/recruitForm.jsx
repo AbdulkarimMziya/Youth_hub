@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import styles from './RecruitForm.module.css';
 
 const RecruitForm = () => {
     const [formData, setFormData] = useState({
@@ -75,49 +76,47 @@ const RecruitForm = () => {
         e.preventDefault();
         
         if (validateForm()) {
-            // Form is valid, process the data
-            console.log('Form submitted:', formData);
-
             // Submit to Google Apps Script
             const url = 'https://script.google.com/macros/s/AKfycbz4oNXlCAB8Z9qG1KFbzPQj_WPbx2iCq4QmJr_dTwuKJ_AKDsphi_JRXACUsXHNKsDgxA/exec';
             const formDataToSend = new FormData();
-            formDataToSend.append('FirstName', formData.firstName);
-            formDataToSend.append('LastName', formData.lastName);
-            formDataToSend.append('PhoneNumber', formData.phoneNumber);
-            formDataToSend.append('Email', formData.email);
-            formDataToSend.append('Position', formData.position);
-            formDataToSend.append('Notes', formData.notes);
+            
+            Object.keys(formData).forEach(key => {
+                const capitalizedKey = key.charAt(0).toUpperCase() + key.slice(1);
+                formDataToSend.append(capitalizedKey, formData[key]);
+            });
 
             fetch(url, {
                 method: 'POST',
                 body: formDataToSend
-            }).then(response => response.text()).then(result => {
+            })
+            .then(response => response.text())
+            .then(result => {
                 alert(result);
-            }).catch(error => {
+                // Reset form on success
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    phoneNumber: '',
+                    email: '',
+                    position: '',
+                    notes: ''
+                });
+            })
+            .catch(error => {
                 console.error('Error submitting form:', error);
                 alert('There was an error submitting your application. Please try again later.');
-            });
-            
-            // Reset form
-            setFormData({
-                firstName: '',
-                lastName: '',
-                phoneNumber: '',
-                email: '',
-                position: '',
-                notes: ''
             });
         }
     };
 
     return (
-        <form onSubmit={handleSubmit} style={styles.form}>
-            <h2 style={styles.title}>Join Our Team</h2>
-            <p style={styles.subtitle}>Fill out the form below to apply for a position with Youth Prime Hub Society</p>
+        <form onSubmit={handleSubmit} className={styles.form}>
+            <h2 className={styles.title}>Join Our Team</h2>
+            <p className={styles.subtitle}>Fill out the form below to apply for a position with Youth Prime Hub Society</p>
             
-            <div style={styles.row}>
-                <div style={styles.inputGroup}>
-                    <label htmlFor="firstName" style={styles.label}>
+            <div className={styles.row}>
+                <div className={styles.inputGroup}>
+                    <label htmlFor="firstName" className={styles.label}>
                         First Name *
                     </label>
                     <input
@@ -126,17 +125,14 @@ const RecruitForm = () => {
                         name="firstName"
                         value={formData.firstName}
                         onChange={handleChange}
-                        style={{
-                            ...styles.input,
-                            ...(errors.firstName ? styles.inputError : {})
-                        }}
+                        className={`${styles.input} ${errors.firstName ? styles.inputError : ''}`}
                         placeholder="Enter your first name"
                     />
-                    {errors.firstName && <span style={styles.error}>{errors.firstName}</span>}
+                    {errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
                 </div>
 
-                <div style={styles.inputGroup}>
-                    <label htmlFor="lastName" style={styles.label}>
+                <div className={styles.inputGroup}>
+                    <label htmlFor="lastName" className={styles.label}>
                         Last Name *
                     </label>
                     <input
@@ -145,19 +141,16 @@ const RecruitForm = () => {
                         name="lastName"
                         value={formData.lastName}
                         onChange={handleChange}
-                        style={{
-                            ...styles.input,
-                            ...(errors.lastName ? styles.inputError : {})
-                        }}
+                        className={`${styles.input} ${errors.lastName ? styles.inputError : ''}`}
                         placeholder="Enter your last name"
                     />
-                    {errors.lastName && <span style={styles.error}>{errors.lastName}</span>}
+                    {errors.lastName && <span className={styles.error}>{errors.lastName}</span>}
                 </div>
             </div>
 
-            <div style={styles.row}>
-                <div style={styles.inputGroup}>
-                    <label htmlFor="phoneNumber" style={styles.label}>
+            <div className={styles.row}>
+                <div className={styles.inputGroup}>
+                    <label htmlFor="phoneNumber" className={styles.label}>
                         Phone Number *
                     </label>
                     <input
@@ -166,17 +159,14 @@ const RecruitForm = () => {
                         name="phoneNumber"
                         value={formData.phoneNumber}
                         onChange={handleChange}
-                        style={{
-                            ...styles.input,
-                            ...(errors.phoneNumber ? styles.inputError : {})
-                        }}
+                        className={`${styles.input} ${errors.phoneNumber ? styles.inputError : ''}`}
                         placeholder="(123) 456-7890"
                     />
-                    {errors.phoneNumber && <span style={styles.error}>{errors.phoneNumber}</span>}
+                    {errors.phoneNumber && <span className={styles.error}>{errors.phoneNumber}</span>}
                 </div>
 
-                <div style={styles.inputGroup}>
-                    <label htmlFor="email" style={styles.label}>
+                <div className={styles.inputGroup}>
+                    <label htmlFor="email" className={styles.label}>
                         Email Address *
                     </label>
                     <input
@@ -185,18 +175,15 @@ const RecruitForm = () => {
                         name="email"
                         value={formData.email}
                         onChange={handleChange}
-                        style={{
-                            ...styles.input,
-                            ...(errors.email ? styles.inputError : {})
-                        }}
+                        className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
                         placeholder="your.email@example.com"
                     />
-                    {errors.email && <span style={styles.error}>{errors.email}</span>}
+                    {errors.email && <span className={styles.error}>{errors.email}</span>}
                 </div>
             </div>
 
-            <div style={styles.inputGroup}>
-                <label htmlFor="position" style={styles.label}>
+            <div className={styles.inputGroup}>
+                <label htmlFor="position" className={styles.label}>
                     Position of Interest *
                 </label>
                 <select
@@ -204,10 +191,7 @@ const RecruitForm = () => {
                     name="position"
                     value={formData.position}
                     onChange={handleChange}
-                    style={{
-                        ...styles.select,
-                        ...(errors.position ? styles.inputError : {})
-                    }}
+                    className={`${styles.select} ${errors.position ? styles.inputError : ''}`}
                 >
                     {positions.map(position => (
                         <option key={position.value} value={position.value}>
@@ -215,11 +199,11 @@ const RecruitForm = () => {
                         </option>
                     ))}
                 </select>
-                {errors.position && <span style={styles.error}>{errors.position}</span>}
+                {errors.position && <span className={styles.error}>{errors.position}</span>}
             </div>
 
-            <div style={styles.inputGroup}>
-                <label htmlFor="notes" style={styles.label}>
+            <div className={styles.inputGroup}>
+                <label htmlFor="notes" className={styles.label}>
                     Additional Notes
                 </label>
                 <textarea
@@ -227,111 +211,17 @@ const RecruitForm = () => {
                     name="notes"
                     value={formData.notes}
                     onChange={handleChange}
-                    style={styles.textarea}
+                    className={styles.textarea}
                     placeholder="Tell us about your experience, availability, or anything else you'd like us to know..."
                     rows="4"
                 />
             </div>
 
-            <button type="submit" style={styles.submitButton}>
+            <button type="submit" className={styles.submitButton}>
                 Submit Application
             </button>
         </form>
     );
-};
-
-const styles = {
-    form: {
-        maxWidth: '600px',
-        margin: '0 auto',
-        padding: '2rem',
-        backgroundColor: '#fff',
-        borderRadius: '10px',
-        boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        fontFamily: 'Arial, sans-serif'
-    },
-    title: {
-        fontSize: '2rem',
-        fontWeight: 'bold',
-        color: '#333',
-        marginBottom: '0.5rem',
-        textAlign: 'center'
-    },
-    subtitle: {
-        fontSize: '1rem',
-        color: '#666',
-        marginBottom: '2rem',
-        textAlign: 'center'
-    },
-    row: {
-        display: 'flex',
-        gap: '1rem',
-        marginBottom: '1rem'
-    },
-    inputGroup: {
-        flex: 1,
-        marginBottom: '1rem'
-    },
-    label: {
-        display: 'block',
-        fontSize: '0.9rem',
-        fontWeight: '600',
-        color: '#333',
-        marginBottom: '0.5rem'
-    },
-    input: {
-        width: '100%',
-        padding: '0.75rem',
-        border: '2px solid #ddd',
-        borderRadius: '5px',
-        fontSize: '1rem',
-        transition: 'border-color 0.3s ease',
-        boxSizing: 'border-box'
-    },
-    select: {
-        width: '100%',
-        padding: '0.75rem',
-        border: '2px solid #ddd',
-        borderRadius: '5px',
-        fontSize: '1rem',
-        backgroundColor: '#fff',
-        cursor: 'pointer',
-        transition: 'border-color 0.3s ease',
-        boxSizing: 'border-box'
-    },
-    textarea: {
-        width: '100%',
-        padding: '0.75rem',
-        border: '2px solid #ddd',
-        borderRadius: '5px',
-        fontSize: '1rem',
-        resize: 'vertical',
-        fontFamily: 'Arial, sans-serif',
-        transition: 'border-color 0.3s ease',
-        boxSizing: 'border-box'
-    },
-    inputError: {
-        borderColor: '#ff4444'
-    },
-    error: {
-        color: '#ff4444',
-        fontSize: '0.8rem',
-        marginTop: '0.25rem',
-        display: 'block'
-    },
-    submitButton: {
-        width: '100%',
-        padding: '1rem',
-        backgroundColor: '#667eea',
-        color: '#fff',
-        border: 'none',
-        borderRadius: '5px',
-        fontSize: '1.1rem',
-        fontWeight: '600',
-        cursor: 'pointer',
-        transition: 'background-color 0.3s ease',
-        marginTop: '1rem'
-    }
 };
 
 export default RecruitForm;

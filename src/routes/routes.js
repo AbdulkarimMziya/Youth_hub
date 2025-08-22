@@ -50,8 +50,3 @@ export const routes = [
 export const getNavRoutes = () => {
   return routes.filter(route => route.showInNav);
 };
-
-// Helper function to get route by path
-export const getRouteByPath = (path) => {
-  return routes.find(route => route.path === path);
-};
