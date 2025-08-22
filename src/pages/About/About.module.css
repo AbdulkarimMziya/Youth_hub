@@ -1,21 +1,371 @@
 .aboutPage {
   min-height: 100vh;
-  padding: 2rem 0;
 }
 
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Hero Section */
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background-color: #f8f9fa;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #333;
+  font-weight: 700;
 }
 
 .hero p {
   font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Our Story Section */
+.ourStory {
+  padding: 6rem 0;
+  background-color: #f8f9fa;
+}
+
+.storyContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.storyText h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.storyText p {
+  font-size: 1.1rem;
+  line-height: 1.7;
   color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btnJoin, .btnDonate {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btnJoin {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.btnJoin:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.btnDonate {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+}
+
+.btnDonate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(245, 87, 108, 0.3);
+}
+
+/* Skewed Grid */
+.skewedGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  transform: skew(-5deg);
+  padding: 1rem;
+}
+
+.skewedGrid .gridItem {
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 12px;
+  transform: skew(5deg);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.skewedGrid .gridItem:hover {
+  transform: skew(5deg) scale(1.05);
+}
+
+.skewedGrid .gridItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Our Mission Section */
+.ourMission {
+  padding: 6rem 0;
+  background: white;
+}
+
+.missionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.missionHeader h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.missionHeader p {
+  font-size: 1.2rem;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.missionCards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.missionCard {
+  position: relative;
+  background: white;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.missionCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.cardIcon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.missionCard h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.cardOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 16px;
+}
+
+.missionCard:hover .cardOverlay {
+  opacity: 1;
+}
+
+.cardOverlay p {
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* The Team Section */
+.theTeam {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.theTeam h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.teamMember {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.teamMember:hover {
+  transform: translateY(-5px);
+}
+
+.memberImage {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+}
+
+.memberImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.teamMember:hover .memberImage img {
+  transform: scale(1.1);
+}
+
+.memberInfo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1.5rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.teamMember:hover .memberInfo {
+  transform: translateY(0);
+}
+
+.memberInfo h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.memberInfo p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .storyContent {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .storyText h2 {
+    font-size: 2rem;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btnJoin, .btnDonate {
+    width: 200px;
+  }
+
+  .skewedGrid {
+    transform: none;
+    gap: 0.5rem;
+  }
+
+  .skewedGrid .gridItem {
+    transform: none;
+  }
+
+  .skewedGrid .gridItem:hover {
+    transform: scale(1.05);
+  }
+
+  .missionHeader h2 {
+    font-size: 2rem;
+  }
+
+  .missionCards {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .missionCard {
+    padding: 2rem 1.5rem;
+  }
+
+  .theTeam h2 {
+    font-size: 2rem;
+  }
+
+  .teamGrid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .ourStory, .ourMission, .theTeam {
+    padding: 4rem 0;
+  }
+
+  .storyText h2, .missionHeader h2, .theTeam h2 {
+    font-size: 1.8rem;
+  }
+
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
 }
