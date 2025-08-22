@@ -44,7 +44,7 @@ const Header = () => {
 
       <div className={styles.menuContainer}>
         <Link to="/donate" className={`${styles.menuItem} ${styles.btn}`}>Donate</Link>
-        <div className={`${styles.menuItem} ${styles.btn}`}>Join</div>
+        <Link to="/join" className={`${styles.menuItem} ${styles.btn}`}>Join</Link>
         
         {/* Hamburger Menu */}
         <div className={styles.hamburgerContainer}>

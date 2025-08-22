@@ -3,6 +3,7 @@ import Home from '../pages/Home/Home';
 import About from '../pages/About/About';
 import Programs from '../pages/Programs/Programs';
 import Contact from '../pages/Contact/Contact';
+import Join from '../pages/Join/Join';
 
 // Define all application routes
 export const routes = [
@@ -29,6 +30,12 @@ export const routes = [
     element: Contact,
     name: 'Contact',
     showInNav: true
+  },
+  {
+    path: '/join',
+    element: Join,
+    name: 'Join',
+    showInNav: false
   }
 ];
 
