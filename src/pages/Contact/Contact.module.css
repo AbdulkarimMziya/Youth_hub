@@ -1,21 +1,241 @@
 .contactPage {
   min-height: 100vh;
-  padding: 2rem 0;
 }
 
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background-color: #f1f3f4;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
 }
 
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
-  color: #333;
+  color: white;
 }
 
 .hero p {
   font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.contactSection {
+  padding: 4rem 0;
+  background-color: #f8f9fa;
+  min-height: 80vh;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contactContent {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  min-height: 70vh;
+}
+
+.leftHalf {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.rightHalf {
+  flex: 2;
+  display: flex;
+  align-items: stretch;
+}
+
+.quoteSection {
+  background-image: linear-gradient(rgba(102, 126, 234, 0.8), rgba(118, 75, 162, 0.8)), url('../../assets/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quoteSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(102, 126, 234, 0.1);
+  backdrop-filter: blur(1px);
+  z-index: 1;
+}
+
+.quoteSection > * {
+  position: relative;
+  z-index: 2;
+}
+
+.quoteHeading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.quote {
+  font-size: 1.3rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0 1rem;
+  position: relative;
+}
+
+.quote::before {
+  content: '"';
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  top: -1rem;
+  left: -0.5rem;
+}
+
+.quote::after {
+  content: '"';
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.3);
+  position: absolute;
+  bottom: -2rem;
+  right: -0.5rem;
+}
+
+.contactInfo {
+  background: white;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  min-height: 250px;
+  justify-content: center;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.contactItem:hover {
+  background-color: #f8f9fa;
+}
+
+.contactIcon {
+  font-size: 2rem;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.contactDetails h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 0.5rem 0;
+}
+
+.contactDetails p {
   color: #666;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .contactContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .leftHalf,
+  .rightHalf {
+    flex: none;
+  }
+  
+  .quoteSection {
+    padding: 2rem 1.5rem;
+  }
+  
+  .quoteHeading {
+    font-size: 2rem;
+  }
+  
+  .quote {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSection {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero p {
+    font-size: 1.1rem;
+  }
+  
+  .quoteSection {
+    padding: 1.5rem 1rem;
+  }
+  
+  .quoteHeading {
+    font-size: 1.8rem;
+  }
+  
+  .quote {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+  
+  .contactInfo {
+    padding: 1.5rem;
+  }
+  
+  .contactItem {
+    padding: 0.75rem;
+  }
+  
+  .contactIcon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
 }
