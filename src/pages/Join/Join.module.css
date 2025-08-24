@@ -1,4 +1,5 @@
 .joinPage {
+  padding: var(--spacing-xl) 0;
   min-height: 100vh;
 }
 
@@ -7,13 +8,6 @@
   color: white;
   padding: 4rem 2rem;
   text-align: center;
-}
-
-.heroContent h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .heroContent p {
@@ -77,6 +71,21 @@
   font-size: 1rem;
   color: #666;
   line-height: 1.6;
+}
+
+.pageHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-3xl) auto;
+  padding: 0 var(--spacing-xl);
+}
+
+.pageDescription {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 /* Responsive Design */

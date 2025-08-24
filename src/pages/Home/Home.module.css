@@ -1,5 +1,23 @@
 .home {
+  padding: var(--spacing-xl) 0;
   min-height: 100vh;
 }
 
 /* You can add page-specific styles here */
+
+/* Remove any custom .hero h1 or .homeTitle styles for page title, use global .pageTitle class in JSX */
+
+.pageHeader {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto var(--spacing-3xl) auto;
+  padding: 0 var(--spacing-xl);
+}
+
+.pageDescription {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+}
