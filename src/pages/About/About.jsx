@@ -1,12 +1,35 @@
 import styles from './About.module.css';
 import img1 from '../../assets/img1.jpg';
+import bannerImage from '../../assets/banner.jpg';
+import Grid2x2 from '../../Components/UI/Grid2x2/Grid2x2';
 
 const About = () => {
+  const gridItems = [
+      {
+        type: 'image',
+        src: bannerImage,
+        alt: 'Youth Prime Hub Society Banner'
+      },
+      {
+        type: 'text', 
+        content: 'Building Communities'
+      },
+      {
+        type: 'text',
+        content: 'Creating Opportunities'
+      },
+      {
+        type: 'image',
+        src: img1,
+        alt: 'Youth Hub Image 1'
+      }
+    ];
+
   return (
     <div className={styles.aboutPage}>
-      <section className={styles.hero}>
-        <h1>About Youth Prime Hub Society</h1>
-        <p>Empowering youth for a brighter future</p>
+      <section className={styles.pageHeader}>
+        <h1 className="pageTitle">About Us</h1>
+        <p className={styles.pageDescription}>Learn more about our mission</p>
       </section>
 
       {/* Our Story Section */}
@@ -22,26 +45,13 @@ const About = () => {
                 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
               </p>
               <div className={styles.ctaButtons}>
-                <button className={styles.btnJoin}>Join Us</button>
-                <button className={styles.btnDonate}>Donate</button>
+                <button className="btn btn-primary">Join Us</button>
+                <button className="btn">Donate</button>
               </div>
             </div>
-            <div className={styles.storyGrid}>
-              <div className={styles.skewedGrid}>
-                <div className={styles.gridItem}>
-                  <img src={img1} alt="Youth activities" />
-                </div>
-                <div className={styles.gridItem}>
-                  <img src={img1} alt="Community engagement" />
-                </div>
-                <div className={styles.gridItem}>
-                  <img src={img1} alt="Youth development" />
-                </div>
-                <div className={styles.gridItem}>
-                  <img src={img1} alt="Leadership training" />
-                </div>
-              </div>
-            </div>
+          <div className={styles.gridBlueBg}>
+            <Grid2x2 items={gridItems} />
+          </div>
           </div>
         </div>
       </section>
