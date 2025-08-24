@@ -1,5 +1,5 @@
 .hero {
-  height: 400px;
+  height: 100vh;
   position: relative;
   display: flex;
   justify-content: center;
@@ -7,6 +7,7 @@
   align-items: center;
   gap: 2rem;
   overflow: hidden;
+  padding: 2rem;
 }
 
 .heroVideo {
@@ -16,8 +17,8 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -2;
-  filter: brightness(0.4) contrast(1.2) saturate(0.8);
+  z-index: 0;
+  filter: brightness(0.3) contrast(1.2) saturate(0.9);
 }
 
 .hero::before {
@@ -27,8 +28,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
 
 .companyName {
@@ -38,6 +39,8 @@
   text-align: center;
   text-transform: uppercase;
   font-weight: lighter;
+  position: relative;
+  z-index: 2;
 }
 
 .companySlogan {
@@ -46,6 +49,8 @@
   margin: 20px 0;
   text-align: center;
   font-weight: bold;
+  position: relative;
+  z-index: 2;
 }
 
 .callToAction {
@@ -53,6 +58,8 @@
   justify-content: center;
   align-items: center;
   gap: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .btn {
