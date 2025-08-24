@@ -4,11 +4,9 @@ import styles from './Join.module.css';
 const Join = () => {
   return (
     <div className={styles.joinPage}>
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <h1>Join Youth Prime Hub Society</h1>
-          <p>Be part of our mission to empower youth and create positive change in our community</p>
-        </div>
+      <section className={styles.pageHeader}>
+        <h1 className="pageTitle">Join Us</h1>
+        <p className={styles.pageDescription}>Become a part of our community</p>
       </section>
       
       <section className={styles.formSection}>

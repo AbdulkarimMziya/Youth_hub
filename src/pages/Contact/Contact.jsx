@@ -4,9 +4,9 @@ import styles from './Contact.module.css';
 const Contact = () => {
   return (
     <div className={styles.contactPage}>
-      <section className={styles.hero}>
-        <h1>Contact Us</h1>
-        <p>Get in touch with our team</p>
+      <section className={styles.pageHeader}>
+        <h1 className="pageTitle">Contact Us</h1>
+        <p className={styles.pageDescription}>Get in touch with our team</p>
       </section>
       
       <section className={styles.contactSection}>

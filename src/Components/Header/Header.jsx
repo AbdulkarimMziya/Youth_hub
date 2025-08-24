@@ -45,40 +45,56 @@ const Header = () => {
       <div className={styles.menuContainer}>
         <Link to="/donate" className={`${styles.menuItem} ${styles.btn}`}>Donate</Link>
         <Link to="/join" className={`${styles.menuItem} ${styles.btn}`}>Join</Link>
+      </div>
+
+      {/* Hamburger Menu - separate from menuContainer for mobile */}
+      <div className={styles.hamburgerContainer}>
+        <button 
+          className={`${styles.hamburgerBtn} ${isMenuOpen ? styles.open : ''}`}
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+        >
+          <span className={styles.hamburgerLine}></span>
+          <span className={styles.hamburgerLine}></span>
+          <span className={styles.hamburgerLine}></span>
+        </button>
         
-        {/* Hamburger Menu */}
-        <div className={styles.hamburgerContainer}>
-          <button 
-            className={`${styles.hamburgerBtn} ${isMenuOpen ? styles.open : ''}`}
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <span className={styles.hamburgerLine}></span>
-            <span className={styles.hamburgerLine}></span>
-            <span className={styles.hamburgerLine}></span>
-          </button>
-          
-          {/* Dropdown Menu */}
-          {isMenuOpen && (
-            <div className={styles.dropdownMenu}>
-              <div className={styles.dropdownOverlay} onClick={closeMenu}></div>
-              <nav className={styles.dropdownNav}>
-                {navRoutes.map(route => (
-                  <Link 
-                    key={route.path}
-                    to={route.path} 
-                    className={`${styles.dropdownLink} ${
-                      location.pathname === route.path ? styles.activeDropdown : ''
-                    }`}
-                    onClick={closeMenu}
-                  >
-                    {route.name}
-                  </Link>
-                ))}
-              </nav>
-            </div>
-          )}
-        </div>
+        {/* Dropdown Menu */}
+        {isMenuOpen && (
+          <div className={styles.dropdownMenu}>
+            <div className={styles.dropdownOverlay} onClick={closeMenu}></div>
+            <nav className={styles.dropdownNav}>
+              {navRoutes.map(route => (
+                <Link 
+                  key={route.path}
+                  to={route.path} 
+                  className={`${styles.dropdownLink} ${
+                    location.pathname === route.path ? styles.activeDropdown : ''
+                  }`}
+                  onClick={closeMenu}
+                >
+                  {route.name}
+                </Link>
+              ))}
+              {/* Add mobile-only menu items */}
+              <div className={styles.mobileMenuDivider}></div>
+              <Link 
+                to="/donate" 
+                className={styles.dropdownLink}
+                onClick={closeMenu}
+              >
+                Donate
+              </Link>
+              <Link 
+                to="/join" 
+                className={styles.dropdownLink}
+                onClick={closeMenu}
+              >
+                Join
+              </Link>
+            </nav>
+          </div>
+        )}
       </div>
     </header>
   );
