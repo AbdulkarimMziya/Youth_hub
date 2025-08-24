@@ -1,0 +1,58 @@
+/* Tab Navigation */
+.tabNavigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-2xl);
+  gap: var(--spacing-md);
+}
+
+.tabButton {
+  padding: var(--spacing-md) var(--spacing-2xl);
+  background: transparent;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
+  border-radius: var(--radius-md);
+  font-weight: var(--font-weight-semibold);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: var(--font-size-base);
+  min-height: 44px;
+}
+
+.tabButton:hover {
+  background: var(--primary-blue);
+  color: var(--text-light);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.activeTab {
+  background: var(--bg-gradient) !important;
+  color: var(--text-light) !important;
+  box-shadow: var(--shadow-md);
+}
+
+.activeTab:hover {
+  background: linear-gradient(135deg, var(--primary-blue-light) 0%, var(--primary-blue) 100%) !important;
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .tabNavigation {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+  
+  .tabButton {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tabButton {
+    padding: var(--spacing-sm) var(--spacing-xl);
+    font-size: var(--font-size-sm);
+  }
+}

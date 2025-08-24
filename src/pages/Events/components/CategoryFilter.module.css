@@ -1,0 +1,78 @@
+.filterContainer {
+  margin-bottom: var(--spacing-2xl);
+  text-align: center;
+}
+
+.filterTitle {
+  font-size: var(--font-size-xl);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-semibold);
+}
+
+.filterButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+.filterButton {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  background: var(--bg-secondary);
+  border: 1px solid var(--gray-300);
+  color: var(--text-secondary);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  min-height: 36px;
+}
+
+.filterButton:hover {
+  background: var(--gray-200);
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.activeFilter {
+  background: var(--bg-gradient) !important;
+  color: var(--text-light) !important;
+  border-color: var(--primary-blue) !important;
+  box-shadow: var(--shadow-md);
+}
+
+.activeFilter:hover {
+  background: linear-gradient(135deg, var(--primary-blue-light) 0%, var(--primary-blue) 100%) !important;
+  box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 768px) {
+  .filterButtons {
+    gap: var(--spacing-sm);
+  }
+  
+  .filterButton {
+    font-size: var(--font-size-xs);
+    padding: var(--spacing-xs) var(--spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .filterButtons {
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+    gap: var(--spacing-sm);
+  }
+  
+  .filterButton {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+}
