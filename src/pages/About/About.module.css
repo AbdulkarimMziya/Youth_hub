@@ -18,6 +18,13 @@
   padding: 0 var(--spacing-xl);
 }
 
+.pageTitle {
+  font-size: var(--font-size-4xl);
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+}
+
 .pageDescription {
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
@@ -34,7 +41,7 @@
 
 .storyContent {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: var(--spacing-3xl);
   align-items: center;
 }
@@ -103,7 +110,7 @@
 
 .missionCards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: var(--spacing-xl);
 }
 
@@ -144,8 +151,8 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--bg-secondary);
-  color: var(--text-secondary);
+  background: rgba(0, 0, 0, 0.85);
+  color: var(--text-light);
   padding: var(--spacing-xl);
   display: flex;
   align-items: center;
@@ -242,7 +249,37 @@
   opacity: 1;
 }
 
+@media (hover: none) {
+  .memberInfo {
+    transform: translateY(0);
+    height: auto;
+    max-height: 80px;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .missionCard .cardOverlay {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
 /* Responsive Design */
+@media (max-width: var(--breakpoint-lg)) {
+  .missionCards {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  .teamGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+  }
+  
+  .pageTitle {
+    font-size: var(--font-size-4xl);
+  }
+}
+
 @media (max-width: var(--breakpoint-md)) {
   .hero h1 {
     font-size: var(--font-size-3xl);
@@ -259,11 +296,17 @@
 
   .storyText h2 {
     font-size: var(--font-size-3xl);
+    text-align: center;
+  }
+  
+  .storyText p {
+    text-align: center;
   }
 
   .ctaButtons {
     flex-direction: column;
     align-items: center;
+    gap: var(--spacing-sm);
   }
 
   .btnJoin, .btnDonate {
@@ -288,7 +331,7 @@
   }
 
   .missionCards {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: var(--spacing-lg);
   }
 
@@ -308,6 +351,14 @@
   .container {
     padding: 0 var(--spacing-md);
   }
+  
+  .gridBlueBg {
+    padding: var(--spacing-lg);
+  }
+  
+  .memberImage {
+    height: 280px;
+  }
 }
 
 @media (max-width: var(--breakpoint-sm)) {
@@ -325,5 +376,41 @@
 
   .teamGrid {
     grid-template-columns: 1fr;
+  }
+  
+  .ctaButtons .btn {
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: var(--font-size-base);
+  }
+  
+  .missionCard {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .pageHeader {
+    padding: 0 var(--spacing-sm);
+  }
+  
+  .pageDescription {
+    font-size: var(--font-size-sm);
+  }
+}
+
+@media (max-width: 400px) {
+  .storyContent {
+    grid-template-columns: 1fr;
+  }
+  
+  .memberImage {
+    height: 250px;
+  }
+  
+  .missionCard h3 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .cardOverlay p {
+    font-size: var(--font-size-sm);
   }
 }
