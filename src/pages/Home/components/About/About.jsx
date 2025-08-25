@@ -1,5 +1,5 @@
 import styles from './About.module.css';
-import Grid2x2 from '../../../../components/UI/Grid2x2/Grid2x2';
+import Grid2x2 from '../../../../Components/UI/Grid2x2/Grid2x2';
 import bannerImage from '../../../../assets/banner.jpg';
 import img1 from '../../../../assets/img1.jpg';
 
@@ -35,7 +35,9 @@ const About = () => {
             through education, mentorship, and opportunities for growth.
           </p>
         </div>
-        <Grid2x2 items={gridItems} />
+        <div className={styles.gridContainer}>
+          <Grid2x2 items={gridItems} />
+        </div>
       </div>
     </section>
   );

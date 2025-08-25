@@ -1,6 +1,6 @@
 .aboutSection {
   min-height: 60vh;
-  padding: 4rem 0;
+  padding: var(--spacing-3xl) 0;
   position: relative;
   display: flex;
   justify-content: center;
@@ -21,18 +21,18 @@
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--spacing-xl);
   z-index: 1;
   display: flex;
   align-items: center;
-  gap: 4rem;
+  gap: var(--spacing-3xl);
   height: 100%;
 }
 
 .aboutHeading {
-  font-size: 3rem;
-  margin-bottom: 2rem;
-  font-weight: bold;
+  font-size: var(--font-size-3xl);
+  margin-bottom: var(--spacing-xl);
+  font-weight: var(--font-weight-bold);
   color: white;
   text-transform: uppercase;
   background: linear-gradient(90deg, #ffffff, #e0e0e0, #ffffff);
@@ -49,14 +49,92 @@
 }
 
 .textContent {
-  flex: 1;
-  text-align: left;
+  width: 100%;
+  text-align: start;
+  margin-bottom: var(--spacing-xl);
+}
+
+.gridContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .aboutContent {
   color: white;
-  font-size: 1.2rem;
-  line-height: 1.6;
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-relaxed);
   opacity: 0.9;
   margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .wrapper {
+    padding: 0 var(--spacing-lg);
+    gap: var(--spacing-2xl);
+  }
+}
+
+@media (max-width: 1024px) {
+  .aboutSection {
+    padding: var(--spacing-2xl) 0;
+  }
+  
+  .wrapper {
+    padding: 0 var(--spacing-md);
+    gap: var(--spacing-xl);
+    flex-direction: column;
+  }
+  
+  .aboutHeading {
+    font-size: var(--font-size-2xl);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .aboutContent {
+    font-size: var(--font-size-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutSection {
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .wrapper {
+    padding: 0 var(--spacing-sm);
+    gap: var(--spacing-xl);
+  }
+  
+  .aboutHeading {
+    text-align: center;
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .textContent {
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .aboutSection {
+    padding: var(--spacing-lg) 0;
+    min-height: unset;
+  }
+  
+  .aboutHeading {
+    font-size: var(--font-size-lg);
+  }
+  
+  .aboutContent {
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-normal);
+  }
+  
+  .wrapper {
+    gap: var(--spacing-md);
+  }
 }

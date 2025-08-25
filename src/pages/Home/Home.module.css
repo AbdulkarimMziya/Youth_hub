@@ -1,3 +1,160 @@
 .home {
   min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  /* Base typography */
+  --home-h1-size: var(--font-size-5xl);
+  --home-h2-size: var(--font-size-3xl);
+  --home-h3-size: var(--font-size-2xl);
+  --home-p-size: var(--font-size-lg);
+  --home-button-size: var(--font-size-base);
+  --home-small-text: var(--font-size-sm);
+}
+
+/* Typography base styles that can be inherited by child components */
+.home h1 {
+  font-size: var(--home-h1-size);
+  line-height: 1.2;
+  margin-bottom: var(--spacing-lg);
+  font-weight: var(--font-weight-bold);
+}
+
+.home h2 {
+  font-size: var(--home-h2-size);
+  line-height: 1.3;
+  margin-bottom: var(--spacing-md);
+  font-weight: var(--font-weight-bold);
+}
+
+.home h3 {
+  font-size: var(--home-h3-size);
+  line-height: 1.4;
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.home p {
+  font-size: var(--home-p-size);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-md);
+}
+
+/* Button typography */
+.home button,
+.home .btn {
+  font-size: var(--home-button-size);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Small text elements */
+.home small,
+.home .smallText {
+  font-size: var(--home-small-text);
+  line-height: var(--line-height-normal);
+}
+
+/* Spacing between sections */
+.home > section {
+  margin-bottom: var(--spacing-3xl);
+}
+
+/* Responsive spacing adjustments */
+@media (max-width: var(--breakpoint-xl)) {
+  .home {
+    --home-h1-size: var(--font-size-4xl);
+    --home-h2-size: var(--font-size-2xl);
+    --home-h3-size: var(--font-size-xl);
+    --home-p-size: var(--font-size-base);
+  }
+  
+  .home > section {
+    margin-bottom: var(--spacing-2xl);
+  }
+}
+
+@media (max-width: var(--breakpoint-lg)) {
+  .home {
+    --home-h1-size: var(--font-size-3xl);
+    --home-h2-size: var(--font-size-xl);
+    --home-h3-size: var(--font-size-lg);
+    --home-p-size: var(--font-size-base);
+    --home-button-size: var(--font-size-base);
+  }
+  
+  .home > section {
+    margin-bottom: var(--spacing-xl);
+  }
+  
+  .home h1 {
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .home h2 {
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+@media (max-width: var(--breakpoint-md)) {
+  .home {
+    --home-h1-size: var(--font-size-2xl);
+    --home-h2-size: var(--font-size-lg);
+    --home-h3-size: var(--font-size-base);
+    --home-p-size: var(--font-size-sm);
+    --home-button-size: var(--font-size-sm);
+    --home-small-text: var(--font-size-xs);
+  }
+  
+  .home > section {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+  }
+  
+  .home h1, .home h2, .home h3 {
+    text-align: center;
+  }
+  
+  .home p {
+    text-align: center;
+    line-height: var(--line-height-normal);
+  }
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+  .home {
+    --home-h1-size: var(--font-size-xl);
+    --home-h2-size: var(--font-size-base);
+    --home-h3-size: var(--font-size-sm);
+    --home-p-size: var(--font-size-xs);
+    padding-bottom: var(--spacing-xl);
+  }
+  
+  .home > section {
+    margin-bottom: var(--spacing-lg);
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+  
+  .home h1 {
+    line-height: 1.1;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .home h2, .home h3 {
+    line-height: 1.2;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .home p {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  /* Extra small screens */
+  @media (max-width: 375px) {
+    .home {
+      --home-h1-size: var(--font-size-lg);
+      --home-h2-size: var(--font-size-sm);
+      --home-p-size: var(--font-size-xs);
+    }
+  }
 }
