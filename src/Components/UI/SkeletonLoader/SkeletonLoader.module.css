@@ -1,0 +1,93 @@
+.skeletonWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.skeleton {
+  background: linear-gradient(90deg, 
+    var(--skeleton-base) 0%, 
+    var(--skeleton-highlight) 50%, 
+    var(--skeleton-base) 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Text skeleton style */
+.text {
+  height: 16px;
+  width: 100%;
+  margin-bottom: var(--spacing-sm);
+}
+
+.text:last-child {
+  width: 80%;
+}
+
+/* Card skeleton style */
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-lg);
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--gray-200);
+  min-height: 200px;
+  height: 100%;
+}
+
+.card .image {
+  height: 120px;
+  width: 100%;
+  margin-bottom: var(--spacing-md);
+}
+
+.card .title {
+  height: 24px;
+  width: 80%;
+  margin-bottom: var(--spacing-md);
+}
+
+/* Image skeleton style */
+.image {
+  height: 200px;
+  width: 100%;
+  border-radius: var(--radius-md);
+}
+
+/* Button skeleton style */
+.button {
+  height: 40px;
+  width: 120px;
+  border-radius: var(--radius-md);
+}
+
+/* Circle skeleton style */
+.circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+
+/* Grid layout for multiple skeletons */
+@media (min-width: 768px) {
+  .skeletonWrapper[data-grid="true"] {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+}

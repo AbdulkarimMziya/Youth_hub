@@ -1,9 +1,22 @@
+import { useState, useEffect } from 'react';
 import styles from './About.module.css';
 import img1 from '../../assets/img1.jpg';
 import bannerImage from '../../assets/banner.jpg';
 import Grid2x2 from '../../Components/UI/Grid2x2/Grid2x2';
+import AboutSkeleton from './AboutSkeleton';
 
 const About = () => {
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1500);
+    
+    return () => clearTimeout(timer);
+  }, []);
+  
   const gridItems = [
       {
         type: 'image',
@@ -25,6 +38,10 @@ const About = () => {
       }
     ];
 
+  if (loading) {
+    return <AboutSkeleton />;
+  }
+  
   return (
     <div className={styles.aboutPage}>
       <section className={styles.pageHeader}>
