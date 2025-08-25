@@ -38,7 +38,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: var(--breakpoint-md)) {
   .pageTitle {
     font-size: var(--font-size-4xl);
   }
@@ -57,7 +57,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: var(--breakpoint-sm)) {
   .pageTitle {
     font-size: var(--font-size-3xl);
   }

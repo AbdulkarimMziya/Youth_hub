@@ -28,14 +28,14 @@
   margin: var(--spacing-md) 0;
 }
 
-@media (max-width: 992px) {
+@media (max-width: var(--breakpoint-lg)) {
   .eventsGridSkeleton {
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: var(--spacing-xl);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: var(--breakpoint-md)) {
   .eventsGridSkeleton {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: var(--spacing-lg);
@@ -46,7 +46,7 @@
   }
 }
 
-@media (max-width: 576px) {
+@media (max-width: var(--breakpoint-sm)) {
   .eventsGridSkeleton {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
