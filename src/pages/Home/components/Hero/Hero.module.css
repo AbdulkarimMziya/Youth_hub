@@ -8,17 +8,6 @@
   gap: 2rem;
   overflow: hidden;
   padding: 2rem;
-  will-change: transform; /* Helps with GPU acceleration */
-}
-
-.videoBgWrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
 }
 
 .heroVideo {
@@ -30,11 +19,10 @@
   object-fit: cover;
   z-index: 0;
   filter: brightness(0.3) contrast(1.2) saturate(0.9);
-  will-change: transform; /* Helps with GPU acceleration */
-  transform: translateZ(0); /* Force GPU acceleration */
 }
 
-.videoOverlay {
+.hero::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -42,17 +30,6 @@
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.6);
   z-index: 1;
-}
-
-.heroContent {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  max-width: 1200px;
 }
 
 .companyName {
@@ -64,7 +41,6 @@
   font-weight: lighter;
   position: relative;
   z-index: 2;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Improve text readability */
 }
 
 .companySlogan {
@@ -75,7 +51,6 @@
   font-weight: bold;
   position: relative;
   z-index: 2;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Improve text readability */
 }
 
 .callToAction {
@@ -97,7 +72,6 @@
   transition: all 0.3s ease;
   min-width: 120px;
   border: 2px solid transparent;
-  user-select: none; /* Prevents text selection */
 }
 
 .primary {
@@ -109,8 +83,6 @@
 .primary:hover {
   background-color: #0056b3;
   border-color: #0056b3;
-  transform: translateY(-2px); /* Subtle animation on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
 }
 
 .secondary {
@@ -122,37 +94,4 @@
 .secondary:hover {
   background-color: white;
   color: #333;
-  transform: translateY(-2px); /* Subtle animation on hover */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
-}
-
-/* Optimize for different screen sizes */
-@media (max-width: 768px) {
-  .companyName {
-    font-size: 1.75rem;
-  }
-  
-  .companySlogan {
-    font-size: 2.5rem;
-  }
-  
-  .callToAction {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .btn {
-    width: 100%;
-    max-width: 200px;
-  }
-}
-
-@media (max-width: 480px) {
-  .companyName {
-    font-size: 1.5rem;
-  }
-  
-  .companySlogan {
-    font-size: 2rem;
-  }
 }

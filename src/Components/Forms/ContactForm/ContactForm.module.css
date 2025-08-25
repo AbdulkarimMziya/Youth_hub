@@ -1,3 +1,9 @@
+.formContainer {
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
 .form {
   max-width: 600px;
   margin: 0 auto;
@@ -7,6 +13,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   min-height: 540px;
+  transition: opacity 0.3s, transform 0.3s;
 }
 
 .formContent {
@@ -46,6 +53,11 @@
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+/* Form hidden after successful submission */
+.formHidden {
+  display: none;
 }
 
 .inputGroup {
@@ -106,10 +118,86 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-top: 1rem;
+  min-height: 48px;
+  position: relative;
 }
 
 .submitButton:hover {
   background-color: #5a6fd8;
+}
+
+.submitButton:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Success message */
+.successMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-height: 540px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.successIcon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--success);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  animation: scaleIn 0.5s ease-out;
+}
+
+.successMessage h3 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.successMessage p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Button content with loading spinner */
+.buttonContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+/* Loading state animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }
 
 /* Responsive design */

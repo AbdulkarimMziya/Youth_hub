@@ -27,14 +27,28 @@
   margin: 0 auto;
 }
 
+@media (max-width: 992px) {
+  .eventsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+  }
+}
+
 @media (max-width: 768px) {
   .eventsGrid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
   }
   
   .noEvents {
     padding: var(--spacing-2xl) var(--spacing-md);
+  }
+}
+
+@media (max-width: 576px) {
+  .eventsGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
   }
 }
 

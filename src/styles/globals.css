@@ -48,6 +48,9 @@
   --bg-gradient: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-dark) 100%);
   --bg-gradient-light: linear-gradient(135deg, var(--gray-50) 0%, var(--white) 100%);
   
+  /* Skeleton Loader Colors */
+  --skeleton-base: #e9ecef;
+  --skeleton-highlight: #f8f9fa;
   /* Spacing System */
   --spacing-xs: 0.25rem;   /* 4px */
   --spacing-sm: 0.5rem;    /* 8px */

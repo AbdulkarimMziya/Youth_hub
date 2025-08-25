@@ -6,9 +6,6 @@
   transition: all var(--transition-normal);
   border: 1px solid var(--gray-200);
   height: fit-content;
-  display: flex;
-  flex-direction: column;
-  will-change: transform; /* Helps with GPU acceleration */
 }
 
 .eventCard:hover {
@@ -19,32 +16,6 @@
 .featuredEvent {
   border: 2px solid var(--primary-blue);
   background: linear-gradient(135deg, #f8f9ff 0%, var(--bg-primary) 100%);
-}
-
-.eventImageContainer {
-  width: 100%;
-  height: 180px;
-  margin-bottom: var(--spacing-md);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-}
-
-.eventImage {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-  transform: scale(1);
-}
-
-.eventImageContainer:hover .eventImage {
-  transform: scale(1.05);
-}
-
-.eventContent {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
 }
 
 .eventHeader {
@@ -178,10 +149,49 @@
     gap: var(--spacing-md);
     align-items: stretch;
   }
+  
+  .eventHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+  }
+  
+  .featuredBadge {
+    align-self: flex-start;
+  }
 }
 
 @media (max-width: 480px) {
   .eventTitle {
     font-size: var(--font-size-xl);
+  }
+  
+  .eventCard {
+    padding: var(--spacing-md);
+  }
+  
+  .eventDescription {
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .registerButton, .viewGalleryButton {
+    font-size: var(--font-size-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+}
+
+@media (max-width: 320px) {
+  .eventTitle {
+    font-size: var(--font-size-lg);
+  }
+  
+  .eventCategory, .featuredBadge {
+    font-size: 10px;
+    padding: 4px 8px;
+  }
+  
+  .eventDate, .eventTime, .eventLocation, .icon {
+    font-size: var(--font-size-xs);
   }
 }

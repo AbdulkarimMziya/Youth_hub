@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from './ContactForm.module.css';
+import LoadingSpinner from '../../UI/LoadingSpinner/LoadingSpinner';
 
 const ContactForm = () => {
     const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ const ContactForm = () => {
     });
 
     const [errors, setErrors] = useState({});
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitSuccess, setSubmitSuccess] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -24,6 +27,11 @@ const ContactForm = () => {
                 ...prev,
                 [name]: ''
             }));
+        }
+        
+        // Reset success state when user starts making changes
+        if (submitSuccess) {
+            setSubmitSuccess(false);
         }
     };
 
@@ -56,95 +64,126 @@ const ContactForm = () => {
         e.preventDefault();
         
         if (validateForm()) {
-            // Submit form logic here
-            console.log('Contact form submitted:', formData);
-            alert('Thank you for your message! We will get back to you soon.');
+            setIsSubmitting(true);
             
-            // Reset form on success
-            setFormData({
-                firstName: '',
-                lastName: '',
-                email: '',
-                message: ''
-            });
+            setTimeout(() => {
+                
+                console.log('Contact form submitted:', formData);
+                
+                setIsSubmitting(false);
+                setSubmitSuccess(true);
+                
+                // Reset form on success
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    message: ''
+                });
+            }, 2000); 
         }
     };
 
     return (
-        <form onSubmit={handleSubmit} className={styles.form}>
-            <h2 className={styles.title}>Send us a Message</h2>
-            <p className={styles.subtitle}>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+        <div className={styles.formContainer}>
+            {submitSuccess && (
+                <div className={styles.successMessage}>
+                    <div className={styles.successIcon}>✓</div>
+                    <h3>Thank you for your message!</h3>
+                    <p>We'll get back to you as soon as possible.</p>
+                </div>
+            )}
             
-            <div className={styles.row}>
-                <div className={styles.inputGroup}>
-                    <label htmlFor="firstName" className={styles.label}>
-                        First Name *
-                    </label>
-                    <input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleChange}
-                        className={`${styles.input} ${errors.firstName ? styles.inputError : ''}`}
-                        placeholder="Enter your first name"
-                    />
-                    {errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
+            <form onSubmit={handleSubmit} className={`${styles.form} ${submitSuccess ? styles.formHidden : ''}`}>
+                <h2 className={styles.title}>Send us a Message</h2>
+                <p className={styles.subtitle}>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+                
+                <div className={styles.row}>
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="firstName" className={styles.label}>
+                            First Name *
+                        </label>
+                        <input
+                            type="text"
+                            id="firstName"
+                            name="firstName"
+                            value={formData.firstName}
+                            onChange={handleChange}
+                            className={`${styles.input} ${errors.firstName ? styles.inputError : ''}`}
+                            placeholder="Enter your first name"
+                            disabled={isSubmitting}
+                        />
+                        {errors.firstName && <span className={styles.error}>{errors.firstName}</span>}
+                    </div>
+
+                    <div className={styles.inputGroup}>
+                        <label htmlFor="lastName" className={styles.label}>
+                            Last Name *
+                        </label>
+                        <input
+                            type="text"
+                            id="lastName"
+                            name="lastName"
+                            value={formData.lastName}
+                            onChange={handleChange}
+                            className={`${styles.input} ${errors.lastName ? styles.inputError : ''}`}
+                            placeholder="Enter your last name"
+                            disabled={isSubmitting}
+                        />
+                        {errors.lastName && <span className={styles.error}>{errors.lastName}</span>}
+                    </div>
                 </div>
 
                 <div className={styles.inputGroup}>
-                    <label htmlFor="lastName" className={styles.label}>
-                        Last Name *
+                    <label htmlFor="email" className={styles.label}>
+                        Email Address *
                     </label>
                     <input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
+                        type="email"
+                        id="email"
+                        name="email"
+                        value={formData.email}
                         onChange={handleChange}
-                        className={`${styles.input} ${errors.lastName ? styles.inputError : ''}`}
-                        placeholder="Enter your last name"
+                        className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
+                        placeholder="your.email@example.com"
+                        disabled={isSubmitting}
                     />
-                    {errors.lastName && <span className={styles.error}>{errors.lastName}</span>}
+                    {errors.email && <span className={styles.error}>{errors.email}</span>}
                 </div>
-            </div>
 
-            <div className={styles.inputGroup}>
-                <label htmlFor="email" className={styles.label}>
-                    Email Address *
-                </label>
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className={`${styles.input} ${errors.email ? styles.inputError : ''}`}
-                    placeholder="your.email@example.com"
-                />
-                {errors.email && <span className={styles.error}>{errors.email}</span>}
-            </div>
+                <div className={styles.inputGroup}>
+                    <label htmlFor="message" className={styles.label}>
+                        Message *
+                    </label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`}
+                        placeholder="Tell us how we can help you..."
+                        rows="6"
+                        disabled={isSubmitting}
+                    />
+                    {errors.message && <span className={styles.error}>{errors.message}</span>}
+                </div>
 
-            <div className={styles.inputGroup}>
-                <label htmlFor="message" className={styles.label}>
-                    Message *
-                </label>
-                <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    className={`${styles.textarea} ${errors.message ? styles.inputError : ''}`}
-                    placeholder="Tell us how we can help you..."
-                    rows="6"
-                />
-                {errors.message && <span className={styles.error}>{errors.message}</span>}
-            </div>
-
-            <button type="submit" className={styles.submitButton}>
-                Send Message
-            </button>
-        </form>
+                <button 
+                    type="submit" 
+                    className={`${styles.submitButton} ${isSubmitting ? styles.submitting : ''}`}
+                    disabled={isSubmitting}
+                >
+                    {isSubmitting ? (
+                        <span className={styles.buttonContent}>
+                            <LoadingSpinner size="small" color="light" />
+                            <span>Sending...</span>
+                        </span>
+                    ) : (
+                        'Send Message'
+                    )}
+                </button>
+            </form>
+        </div>
     );
 };
 
