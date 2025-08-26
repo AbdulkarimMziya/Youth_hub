@@ -50,6 +50,8 @@
   transition: all 0.3s ease;
   min-width: 140px;
   border: 2px solid transparent;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .accent {
