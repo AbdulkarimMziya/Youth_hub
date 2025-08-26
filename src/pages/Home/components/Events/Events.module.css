@@ -222,6 +222,9 @@
   width: 100%;
   font-size: var(--font-size-base);
   box-shadow: var(--shadow-md);
+  display: block;
+  text-align: center;
+  text-decoration: none;
 }
 
 .registerButton:hover {
@@ -244,6 +247,8 @@
   cursor: pointer;
   transition: all var(--transition-normal);
   font-size: var(--font-size-base);
+  display: inline-block;
+  text-decoration: none;
 }
 
 .viewAllButton:hover {

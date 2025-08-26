@@ -1,4 +1,5 @@
 import styles from './Events.module.css';
+import { Link } from 'react-router-dom';
 
 const Events = () => {
   const upcomingEvents = [
@@ -66,13 +67,13 @@ const Events = () => {
                 </div>
               </div>
               <p className={styles.eventDescription}>{event.description}</p>
-              <button className={styles.registerButton}>Register Now</button>
+              <Link to={`/events/${event.id}`} className={styles.registerButton}>Register Now</Link>
             </div>
           ))}
         </div>
         
         <div className={styles.viewAllEvents}>
-          <button className={styles.viewAllButton}>View All Events</button>
+          <Link to="/events" className={styles.viewAllButton}>View All Events</Link>
         </div>
       </div>
     </section>

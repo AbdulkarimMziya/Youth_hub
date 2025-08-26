@@ -72,6 +72,8 @@
   transition: all var(--transition-normal);
   min-width: 120px;
   border: 2px solid transparent;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .primary {

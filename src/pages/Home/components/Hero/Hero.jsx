@@ -1,5 +1,6 @@
 import styles from './Hero.module.css';
 import heroVideo from '../../../../assets/hero-video.mp4';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   return (
@@ -19,8 +20,8 @@ const Hero = () => {
         <h2 className={styles.companyName}>Youth Prime Hub Society</h2>
         <h1 className={styles.companySlogan}>Empower | Educate | Equip.</h1>
         <div className={styles.callToAction}>
-          <div className={`${styles.btn} ${styles.primary}`}>Donate</div>
-          <div className={`${styles.btn} ${styles.secondary}`}>Join Us</div>
+          <Link to="/contact" className={`${styles.btn} ${styles.primary}`}>Donate</Link>
+          <Link to="/join" className={`${styles.btn} ${styles.secondary}`}>Join Us</Link>
         </div>
       </div>
     </section>
