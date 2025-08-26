@@ -12,7 +12,6 @@ const Events = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [events, setEvents] = useState([]);
 
-  // Simulate fetching data from API
   useEffect(() => {
     setIsLoading(true);
     
