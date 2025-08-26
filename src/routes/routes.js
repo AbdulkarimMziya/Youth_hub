@@ -21,12 +21,6 @@ export const routes = [
     showInNav: true
   },
   {
-    path: '/programs',
-    element: Programs,
-    name: 'Programs', 
-    showInNav: true
-  },
-  {
     path: '/events',
     element: Events,
     name: 'Events',
