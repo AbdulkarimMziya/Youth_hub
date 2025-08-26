@@ -1,4 +1,4 @@
-import RecruitForm from '../../Components/Forms/RecruitForm/RecruitForm.jsx';
+import RecruitForm from '@components/Forms/RecruitForm/RecruitForm.jsx';
 import styles from './Join.module.css';
 
 const Join = () => {
