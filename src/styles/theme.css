@@ -1,0 +1,174 @@
+/* Theme utility classes based on logo colors */
+
+/* Section backgrounds - used for specific sections, not the entire page */
+.section-primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-light);
+  padding: 2rem 0;
+}
+
+.section-secondary {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  padding: 2rem 0;
+}
+
+.section-accent-1 {
+  background-color: var(--color-accent-1);
+  color: var(--color-text-light);
+  padding: 2rem 0;
+}
+
+.section-accent-2 {
+  background-color: var(--color-accent-2);
+  color: var(--color-text-light);
+  padding: 2rem 0;
+}
+
+/* Background accents - for smaller elements, not full sections */
+.bg-accent-primary {
+  background-color: rgba(0, 84, 84, 0.1);
+  border-left: 3px solid var(--color-primary);
+}
+
+.bg-accent-secondary {
+  background-color: rgba(246, 207, 82, 0.1);
+  border-left: 3px solid var(--color-secondary);
+}
+
+/* Text colors */
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.text-accent-1 {
+  color: var(--color-accent-1);
+}
+
+.text-accent-2 {
+  color: var(--color-accent-2);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+.text-dark {
+  color: var(--color-text);
+}
+
+/* Border colors */
+.border-primary {
+  border-color: var(--color-primary);
+}
+
+.border-secondary {
+  border-color: var(--color-secondary);
+}
+
+.border-accent-1 {
+  border-color: var(--color-accent-1);
+}
+
+.border-accent-2 {
+  border-color: var(--color-accent-2);
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #ffffff;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: var(--color-text);
+  border: 2px solid var(--color-secondary);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+}
+
+/* Subtle gradient backgrounds for sections */
+.bg-gradient-subtle-primary {
+  background: linear-gradient(135deg, #ffffff, rgba(0, 84, 84, 0.1));
+  color: var(--color-text);
+}
+
+.bg-gradient-subtle-secondary {
+  background: linear-gradient(135deg, #ffffff, rgba(246, 207, 82, 0.1));
+  color: var(--color-text);
+}
+
+/* Hover effects */
+.hover-primary {
+  transition: all 0.3s ease;
+}
+
+.hover-primary:hover {
+  color: var(--color-primary);
+  border-left: 3px solid var(--color-primary);
+  padding-left: 10px;
+}
+
+.hover-secondary {
+  transition: all 0.3s ease;
+}
+
+.hover-secondary:hover {
+  color: var(--color-secondary);
+  border-left: 3px solid var(--color-secondary);
+  padding-left: 10px;
+}
+
+/* Card styles with theme colors */
+.card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-primary {
+  border-top: 4px solid var(--color-primary);
+}
+
+.card-secondary {
+  border-top: 4px solid var(--color-secondary);
+}
+
+.card-accent-1 {
+  border-top: 4px solid var(--color-accent-1);
+}
+
+.card-accent-2 {
+  border-top: 4px solid var(--color-accent-2);
+}
