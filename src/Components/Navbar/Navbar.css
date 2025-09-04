@@ -18,10 +18,11 @@
 }
 
 .logo {
-  color: rgb(16, 85, 214);
+  color: var(--color-primary);
   font-weight: bold;
   font-size: 1.5rem;
   margin-right: 2rem;
+  text-decoration: none;
 }
 
 .navbar-right {

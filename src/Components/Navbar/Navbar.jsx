@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 import HamburgerIcon from '../HamburgerIcon/HamburgerIcon';
 import HamburgerMenu from '../HamburgerMenu/HamburgerMenu';
@@ -52,13 +53,12 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-left">
           {isMobile && <HamburgerIcon isOpen={menuOpen} onClick={toggleMenu} />}
-          <div className="logo">Logo</div>
+          <Link to="/" className="logo">Logo</Link>
           {!isMobile && (
             <ul style={desktopNavLinksStyle}>
-              <li style={desktopNavLinkItemStyle}><a style={desktopNavLinkAnchorStyle} href="#">About Us</a></li>
-              <li style={desktopNavLinkItemStyle}><a style={desktopNavLinkAnchorStyle} href="#">Why Youth?</a></li>
-              <li style={desktopNavLinkItemStyle}><a style={desktopNavLinkAnchorStyle} href="#">Plan of Action</a></li>
-              <li style={desktopNavLinkItemStyle}><a style={desktopNavLinkAnchorStyle} href="#">Contact Us</a></li>
+              <li style={desktopNavLinkItemStyle}><Link style={desktopNavLinkAnchorStyle} to="/about-us">About Us</Link></li>
+              <li style={desktopNavLinkItemStyle}><Link style={desktopNavLinkAnchorStyle} to="/why-youth">Why Youth?</Link></li>
+              <li style={desktopNavLinkItemStyle}><Link style={desktopNavLinkAnchorStyle} to="/plan-of-action">Plan of Action</Link></li>
             </ul>
           )}
         </div>

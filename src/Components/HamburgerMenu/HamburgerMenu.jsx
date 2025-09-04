@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './HamburgerMenu.css';
 
 function HamburgerMenu({ isOpen, onClose }) {
@@ -7,7 +8,7 @@ function HamburgerMenu({ isOpen, onClose }) {
     justifyContent: 'flex-start',
     listStyle: 'none',
     margin: 0,
-    padding: '80px 0 220px 0', // Added bottom padding to make room for contact section
+    padding: '80px 0 220px 0', 
     flexDirection: 'column',
     position: 'fixed',
     backgroundColor: '#ffffff',
@@ -88,11 +89,10 @@ function HamburgerMenu({ isOpen, onClose }) {
     <>
       <div style={overlayStyle} onClick={onClose} className="hamburger-menu-overlay"></div>
       <ul style={navLinksStyle}>
-        <div style={mobileLogoStyle}>Youth Hub</div>
-        <li style={navLinkItemStyle} className="nav-link-item"><a style={navLinkAnchorStyle} className="menu-link-hover" href="#">About Us</a></li>
-        <li style={navLinkItemStyle} className="nav-link-item"><a style={navLinkAnchorStyle} className="menu-link-hover" href="#">Why Youth?</a></li>
-        <li style={navLinkItemStyle} className="nav-link-item"><a style={navLinkAnchorStyle} className="menu-link-hover" href="#">Plan of Action</a></li>
-        <li style={navLinkItemStyle} className="nav-link-item"><a style={navLinkAnchorStyle} className="menu-link-hover" href="#">Contact Us</a></li>
+        <Link to="/" style={mobileLogoStyle} onClick={onClose}>Youth Hub</Link>
+        <li style={navLinkItemStyle} className="nav-link-item"><Link style={navLinkAnchorStyle} className="menu-link-hover" to="/about-us" onClick={onClose}>About Us</Link></li>
+        <li style={navLinkItemStyle} className="nav-link-item"><Link style={navLinkAnchorStyle} className="menu-link-hover" to="/why-youth" onClick={onClose}>Why Youth?</Link></li>
+        <li style={navLinkItemStyle} className="nav-link-item"><Link style={navLinkAnchorStyle} className="menu-link-hover" to="/plan-of-action" onClick={onClose}>Plan of Action</Link></li>
         
         {/* Contact Section */}
         <div className="menu-contact-section">
