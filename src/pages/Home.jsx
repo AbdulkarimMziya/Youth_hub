@@ -1,11 +1,137 @@
-import React from 'react';
+import React, { useState } from 'react';
+import './Home.css';
+
+const programs = [
+	{
+		title: 'Personal Growth',
+		content: (
+			<ul>
+				<li>
+					<strong>Mentorship & Coaching:</strong> One-on-one guidance from mentors in areas of passion.
+				</li>
+				<li>
+					<strong>Life Skills Training:</strong> Financial literacy, communication, decision-making, and confidence-building.
+				</li>
+			</ul>
+		),
+	},
+	{
+		title: 'Skills & Education',
+		content: (
+			<ul>
+				<li>
+					<strong>Workshops & Bootcamps:</strong> Training in leadership, entrepreneurship, digital skills, and trades.
+				</li>
+				<li>
+					<strong>Peer Learning & Scholarships:</strong> Collaborative learning plus access to scholarships and internships.
+				</li>
+			</ul>
+		),
+	},
+	{
+		title: 'Leadership & Community',
+		content: (
+			<ul>
+				<li>
+					<strong>Youth Councils & Projects:</strong> Hands-on leadership through decision-making and real initiatives.
+				</li>
+				<li>
+					<strong>Volunteer Opportunities:</strong> Building responsibility and giving back to the community.
+				</li>
+			</ul>
+		),
+	},
+	{
+		title: 'Economic Empowerment',
+		content: (
+			<ul>
+				<li>
+					<strong>Industry Training:</strong> Real-world experience with professionals, trades, and mentors.
+				</li>
+			</ul>
+		),
+	},
+];
 
 function Home() {
-  return (
-    <div className="container">
-      <h1>Home</h1>
-    </div>
-  );
+	const [active, setActive] = useState(0);
+
+	return (
+		<div className="container">
+			<section className="hero-section">
+				<h2>Youth Prime Social Hub</h2>
+				<div className="hero-content">
+					<h1 className="hero-title">Empowering Youth. Shaping Futures.</h1>
+					<p className="hero-tagline">
+						At Youth Prime Hub Society, we empower, educate, and equip young people to turn their dreams into reality — and no one has to do it alone.
+					</p>
+					<a href="#" className="hero-cta btn">
+						Start your journey today
+					</a>
+				</div>
+			</section>
+
+			<section className="about-section">
+				<h2 className="about-title">About Us</h2>
+				<p className="about-desc">Youth Prime Hub Society is a community-driven space for young people ages 14–24.</p>
+				<ul className="about-list">
+					<li>
+						<strong>Dream boldly</strong> with vision and purpose.
+					</li>
+					<li>
+						<strong>Grow knowledge</strong> through education and skills training.
+					</li>
+					<li>
+						<strong>Gain experience</strong> with mentorship and industry opportunities.
+					</li>
+					<li>
+						<strong>Lead change</strong> in their communities.
+					</li>
+				</ul>
+				<p className="about-message">
+					Together, we’re raising a generation of confident, resilient leaders shaping a brighter tomorrow.
+				</p>
+			</section>
+
+			<section className="programs-section">
+				<h2 className="programs-title">Our Programs &amp; Services</h2>
+				<div className="programs-nav">
+					{programs.map((p, idx) => (
+						<button
+							key={p.title}
+							className={`programs-tab${active === idx ? ' active' : ''}`}
+							onClick={() => setActive(idx)}
+						>
+							{p.title}
+						</button>
+					))}
+				</div>
+
+				<div className="programs-content">{programs[active].content}</div>
+				<p className="programs-message">
+					By the end of their journey, youth are equipped to launch careers, pursue independence, or grow their dreams into reality.
+				</p>
+			</section>
+
+			<section className="promise-section">
+				<h2 className="promise-title">Our Promise</h2>
+				<ul className="promise-list">
+					<li>
+						<span className="promise-icon">✔️</span>{' '}
+						<span className="promise-text">Discover their passions and talents.</span>
+					</li>
+					<li>
+						<span className="promise-icon">✔️</span>{' '}
+						<span className="promise-text">Gain hands-on experience with mentors and industries.</span>
+					</li>
+					<li>
+						<span className="promise-icon">✔️</span>{' '}
+						<span className="promise-text">Build confidence, skills, and independence for a brighter future.</span>
+					</li>
+				</ul>
+			</section>
+		</div>
+	);
 }
 
 export default Home;
