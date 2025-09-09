@@ -58,7 +58,7 @@ function WhyYouthPage() {
         </section>
 
         {/* How We Tackle */}
-        <section className="highlight">
+        <section className="crisis">
             <div className="crisis-wrapper">
                 <h2>How do we tackle the youth crisis?</h2>
                 <p>
