@@ -82,6 +82,7 @@ header {
     width: 100%;
     position: relative;
     border-radius: 12px;
+    margin-top: 5rem;
 }
 .accordion-flex {
     display: flex;
