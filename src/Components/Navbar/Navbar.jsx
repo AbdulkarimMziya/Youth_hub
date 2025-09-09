@@ -53,7 +53,9 @@ function Navbar() {
       <nav className="navbar">
         <div className="navbar-left">
           {isMobile && <HamburgerIcon isOpen={menuOpen} onClick={toggleMenu} />}
-          <Link to="/" className="logo">Logo</Link>
+          <Link to="/" className="logo">
+            <img src="/logo-transparent-bg.png" alt="Logo" style={{ height: '50px', width: 'auto' }} />
+          </Link>
           {!isMobile && (
             <ul style={desktopNavLinksStyle}>
               <li style={desktopNavLinkItemStyle}><Link style={desktopNavLinkAnchorStyle} to="/about-us">About Us</Link></li>
