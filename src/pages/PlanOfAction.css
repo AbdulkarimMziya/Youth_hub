@@ -1,29 +1,45 @@
-.container {
-    width: 100%;
+/* Responsive Typography */
+
+
+/* Typography and color handled by index.css and App.css */
+.stages-title, .commitment-title, .approach h2 {
+    font-size: clamp(1.3rem, 4vw, 2.1rem);
 }
+.stage-title {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+}
+.stage-subtitle {
+    font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+}
+.stage-summary, .stage-content-box .stage-message {
+    font-size: clamp(1rem, 2.5vw, 1.18rem);
+}
+
+
+
+/* .container handled by App.css */
+
 
 .hero {
     width: 100%;
+    min-height: 300px;
     height: 400px;
     background-color: rgb(180,222,208);
-
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
 
+/* h2 handled by App.css, header layout below */
 header {
     max-width: 800px;
     width: 100%;
 }
 
+
 .approach h2 {
-    margin-bottom: 3rem;    
+    margin-bottom: 3rem;
 }
 .approach .wrapper {
     width: 800px;
@@ -31,7 +47,6 @@ header {
     margin: 0 auto;
     padding-top: 5rem;
 }
-
 .approach .content {
     display: flex;
     flex-direction: column;
@@ -39,11 +54,9 @@ header {
     justify-content: center;
     align-self: start;
 }
-
 .approach .content p {
     line-height: 1.6;
 }
-
 .approach .core-values {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -51,88 +64,196 @@ header {
     margin-top: 2rem;
 }
 
+
+/* Horizontal Accordion Styles for Stages */
+
 .stages {
     width: 100%;
-    margin: 4rem 0;
-}
-
-.stages-title {
+    max-width: 1080px;
+    margin: 4rem auto 0 auto;
     text-align: center;
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #2c3e50;
 }
 
-.stages-accordion {
-    max-width: 800px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
 
-.stage-card {
-    background: #f7f7f7;
+/* Accordion layout */
+.accordion {
+    height: 400px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
     border-radius: 12px;
-    box-shadow: 0 2px 12px rgba(44,62,80,0.07);
-    padding: .7rem 1.5rem;
+}
+.accordion-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 0;
+}
+.stage-accordion-item {
+    flex: 1 1 0%;
+    min-width: 0;
+    height: 400px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: flex 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    outline: none;
+}
+.stage-accordion-item.expanded {
+    flex: 5 1 0%;
+    z-index: 2;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+}
+.stage-accordion-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.45);
+    z-index: 1;
+    pointer-events: none;
+    transition: background 0.3s;
+}
+.stage-accordion-item.expanded::before {
+    background: rgba(0,0,0,0.55);
+}
+.stage-header.always-center {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.18s;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity 0.4s;
 }
-
-.stage-card:hover {
-    transform: translateY(-6px) scale(1.03);
-    box-shadow: 0 6px 24px rgba(44,62,80,0.12);
+.stage-title {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    transition: opacity 0.4s;
+    text-align: center;
 }
-
-.stage-header {
-    font-size: 1.15rem;
+.stage-subtitle {
+    color: #fff;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 1rem;
-    color: #2980b9;
+    letter-spacing: 0.08em;
+    opacity: 0.8;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    margin-bottom: 0.2em;
+    display: block;
     text-align: center;
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    padding: 0.5rem 0;
-    border-radius: 6px;
-    transition: background 0.15s;
+    transition: opacity 0.4s;
 }
-
-.stage-header.open {
-    background: #eaf6fb;
+/* Dim title/subtitle when expanded */
+.stage-accordion-item.expanded .stage-header.always-center,
+.stage-accordion-item.expanded .stage-title,
+.stage-accordion-item.expanded .stage-subtitle {
+    opacity: 0.3;
+    pointer-events: none;
+    transition: opacity 0.4s;
 }
-
-.stage-details {
-    width: 100%;
-    text-align: center;
+/* Content box overlay for expanded panel */
+/* Accordion Content Box Styling Improvements */
+.stage-content-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 220px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+    background: rgba(30, 30, 40, 0.92);
+    color: #fff;
+    border-radius: 1.2rem;
+    box-shadow: 0 6px 32px rgba(0,0,0,0.25);
+    padding: 1.2rem 1rem;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s, transform 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
-
-.stage-details ul {
-    margin-bottom: 1.2rem;
-    padding-left: 0;
-    list-style: none;
+.stage-accordion-item.expanded .stage-content-box {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1.04);
 }
-
-.stage-details li {
-    font-size: 1rem;
+.stage-content-box ul {
+    list-style: disc inside;
+    margin: 0 0 1.2rem 0.5rem;
+    padding: 0;
+    color: #fff;
+    text-align: left;
+    font-size: 1.08rem;
+    line-height: 1.7;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    letter-spacing: 0.01em;
+}
+.stage-content-box li {
+    font-size: 1.08rem;
     margin-bottom: 0.7rem;
-    line-height: 1.5;
-    text-align: center;
-}
-
-.stage-message {
-    font-size: 1.05rem;
-    color: #16a085;
+    line-height: 1.7;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    padding-left: 0.1em;
     font-weight: 500;
-    margin-top: 0.5rem;
-    text-align: center;
+    letter-spacing: 0.01em;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.08);
+}
+.stage-content-box .stage-message {
+    color: #ffe082;
+    font-size: 1.13rem;
+    font-weight: 700;
+    margin-top: 1.2rem;
+    text-align: left;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.10);
 }
 
+.stage-summary {
+    font-size: 1.13rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.9rem;
+    letter-spacing: 0.01em;
+    line-height: 1.7;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.10);
+}
+
+
+
+
+/* Commitment Section Styles */
 .commitment-section {
     width: 100%;
     max-width: 800px;
@@ -140,39 +261,36 @@ header {
     border-radius: 12px;
     padding: 2.5rem 2rem;
     text-align: center;
+    background-color: var(--color-primary);
 }
-
 .commitment-title {
     font-size: 2rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: #000;
     margin-bottom: 2rem;
 }
-
 .commitment-content ul {
     list-style: none;
     padding: 0;
     margin-bottom: 2rem;
 }
-
 .commitment-content li {
     font-size: 1.1rem;
     margin-bottom: 1.2rem;
-    color: #34495e;
+    color: var(--color-text-light);
     line-height: 1.6;
 }
-
 .commitment-actions {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
+    flex-wrap: wrap;
 }
-
 .btn {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background: #2c3e50;
-    color: #fff;
+    background: var(--color-secondary);
+    color: #000;
     border-radius: 6px;
     font-weight: 600;
     text-decoration: none;
@@ -180,17 +298,30 @@ header {
     cursor: pointer;
     transition: background 0.2s;
 }
-
 .btn:hover {
-    background: #34495e;
+    background: rgba(246, 207, 84, 0.90);
 }
-
 .btn-secondary {
-    background: #eaf6fb;
-    color: #2c3e50;
-    border: 1px solid #2c3e50;
+    background: transparent;
+    color: var(--color-text-light);
+    border: 2px solid var(--color-secondary);
 }
-
 .btn-secondary:hover {
-    background: #d0eaf7;
+    background: rgba(246, 207, 84, 0.7);
+}
+/* Responsive tweaks for commitment section */
+@media (max-width: 600px) {
+    .commitment-section {
+        padding: 1.2rem 0.5rem;
+    }
+    .commitment-title {
+        font-size: 1.3rem;
+    }
+    .commitment-content li {
+        font-size: 1rem;
+    }
+    .commitment-actions {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
 }

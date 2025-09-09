@@ -25,3 +25,22 @@ h1 {
   color: var(--color-primary);
   margin-bottom: 2rem;
 }
+
+/* Add vector background to all h2 elements */
+h2 {
+        position: relative;
+        z-index: 1;
+        background: url('/vector-1.png') no-repeat center center;
+        background-size: contain;
+        height: 80px;           
+        display: flex;           
+        align-items: center;
+        justify-content: center; 
+        padding: 0;              
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        font-size: 1.5rem;         
+        text-align: center;
+        line-height: 1.2;
+        width: 100%;
+}
