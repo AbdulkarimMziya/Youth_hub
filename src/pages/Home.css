@@ -275,47 +275,101 @@
 }
 
 /* Promise Section Enhancements */
+
 .promise-section {
     background: linear-gradient(120deg, #cdd9f2 60%, #fff 100%);
     border-radius: 1.5rem;
-    padding: 2.5rem 2rem;
+    padding: 2.5rem 2rem 2.2rem 2rem;
     margin: 3rem auto 0 auto;
     max-width: 700px;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.09);
     text-align: center;
     border: 1px solid #e0e0e0;
+    position: relative;
+    overflow: hidden;
 }
 .promise-title {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     color: var(--color-primary);
+    letter-spacing: 0.01em;
 }
 .promise-list {
     list-style: none;
     padding: 0;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: center;
 }
 .promise-list li {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.15rem;
-    margin-bottom: 1.2rem;
+    justify-content: flex-start;
+    font-size: 1.18rem;
     color: #263238;
     font-weight: 500;
-    transition: color 0.2s;
+    background: #f8fafb;
+    border-radius: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    padding: 1.1rem 1.5rem;
+    min-width: 320px;
+    max-width: 95%;
+    transition: box-shadow 0.2s, background 0.2s;
 }
 .promise-list li:hover {
-    color: var(--color-accent-2);
+    background: #eaf6f3;
+    box-shadow: 0 4px 16px rgba(0, 84, 84, 0.10);
 }
 .promise-icon {
-    font-size: 1.5rem;
-    color: #16a085;
-    margin-right: 0.7rem;
+    font-size: 2.1rem;
+    margin-right: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f6cf52 60%, #b8a04a 100%);
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(246,207,82,0.10);
+    border: 2px solid #fffbe6;
+}
+.promise-icon-star {
+    background: linear-gradient(135deg, #f6cf52 60%, #ffd700 100%);
+    color: #fff;
+}
+.promise-icon-mentor {
+    background: linear-gradient(135deg, #1976d2 60%, #64b5f6 100%);
+    color: #fff;
+}
+.promise-icon-growth {
+    background: linear-gradient(135deg, #16a085 60%, #b2dfdb 100%);
+    color: #fff;
 }
 .promise-text {
-    font-size: 1.08rem;
+    font-size: 1.13rem;
     color: #263238;
+    text-align: left;
+}
+.promise-text strong {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+@media (max-width: 600px) {
+    .promise-list li {
+        min-width: 0;
+        width: 100%;
+        padding: 0.9rem 0.7rem;
+        font-size: 1rem;
+    }
+    .promise-icon {
+        font-size: 1.4rem;
+        width: 2rem;
+        height: 2rem;
+        margin-right: 0.7rem;
+    }
 }
 

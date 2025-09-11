@@ -127,16 +127,16 @@ function Home() {
 				<h2 className="promise-title">Our Promise</h2>
 				<ul className="promise-list">
 					<li>
-						<span className="promise-icon">✔️</span>{' '}
-						<span className="promise-text">Discover their passions and talents.</span>
+						<span className="promise-icon promise-icon-star" aria-label="Star">★</span>
+						<span className="promise-text"><strong>Discover</strong> their passions and talents.</span>
 					</li>
 					<li>
-						<span className="promise-icon">✔️</span>{' '}
-						<span className="promise-text">Gain hands-on experience with mentors and industries.</span>
+						<span className="promise-icon promise-icon-mentor" aria-label="Mentor">🎓</span>
+						<span className="promise-text"><strong>Gain</strong> hands-on experience with mentors and industries.</span>
 					</li>
 					<li>
-						<span className="promise-icon">✔️</span>{' '}
-						<span className="promise-text">Build confidence, skills, and independence for a brighter future.</span>
+						<span className="promise-icon promise-icon-growth" aria-label="Growth">🌱</span>
+						<span className="promise-text"><strong>Build</strong> confidence, skills, and independence for a brighter future.</span>
 					</li>
 				</ul>
 			</section>
