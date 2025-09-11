@@ -4,9 +4,10 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(120deg, rgba(0,84,84,0.55) 60%, rgba(246,207,82,0.18) 100%);
   z-index: 997;
   transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(2px);
 }
 
 .menu-contact-section {
@@ -14,18 +15,20 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: rgba(0, 84, 84, 0.1);
+  background: linear-gradient(120deg, rgba(0,84,84,0.08) 60%, #fff 100%);
   color: var(--color-text);
-  padding: 1.5rem;
+  padding: 1.5rem 1.2rem 1.2rem 1.2rem;
   border-top: 1px solid var(--color-primary);
+  box-shadow: 0 -2px 12px rgba(0,0,0,0.04);
 }
 
 .contact-item {
   display: flex;
   align-items: center;
   margin-bottom: 0.75rem;
-  font-size: 0.85rem;
-  color: var(--color-text);
+  font-size: 0.95rem;
+  color: var(--color-primary);
+  gap: 0.5rem;
 }
 
 .contact-item:last-child {
@@ -33,43 +36,55 @@
 }
 
 .contact-heading {
-  font-size: 1rem;
-  font-weight: bold;
+  font-size: 1.08rem;
+  font-weight: 700;
   margin-bottom: 0.75rem;
   color: var(--color-primary);
+  letter-spacing: 0.01em;
 }
 
 .social-links {
   display: flex;
   gap: 1rem;
   margin-top: 0.75rem;
+  flex-wrap: wrap;
 }
 
 .social-link {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background-color: #ffffff;
+  background-color: #fff;
   color: var(--color-primary);
-  border: 1px solid var(--color-primary);
-  transition: all 0.3s ease;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--color-primary);
+  transition: box-shadow 0.2s, background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  font-size: 1.2rem;
 }
 
-.social-link:hover {
+.social-link:hover, .social-link:focus {
   background-color: var(--color-primary);
-  color: #ffffff;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(0,84,84,0.13);
+  outline: 2px solid var(--color-secondary);
 }
 
-.menu-link-hover:hover {
-  background-color: rgba(0, 84, 84, 0.1);
+
+/* Remove hover effects for menu items as requested */
+.menu-link-hover,
+.nav-link-item {
+  background: none;
   color: var(--color-primary);
-  transition: all 0.3s ease;
-}
-
-.nav-link-item:hover {
-  border-left: 4px solid var(--color-secondary);
+  border: none;
+  padding: 0.9rem 1.2rem;
+  font-size: 1.08rem;
+  font-weight: 500;
+  border-radius: 0.7rem;
+  margin-bottom: 0.3rem;
+  transition: none;
+  cursor: pointer;
+  outline: none;
 }
