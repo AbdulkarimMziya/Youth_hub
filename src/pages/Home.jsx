@@ -14,6 +14,7 @@ const programs = [
 				</li>
 			</ul>
 		),
+		backgroundImage: '/youth-growth-img.jpg',
 	},
 	{
 		title: 'Skills & Education',
@@ -27,6 +28,7 @@ const programs = [
 				</li>
 			</ul>
 		),
+		backgroundImage: '/youth-skills-img.jpg',
 	},
 	{
 		title: 'Leadership & Community',
@@ -40,6 +42,7 @@ const programs = [
 				</li>
 			</ul>
 		),
+		backgroundImage: '/youth-leadership-img.jpg',
 	},
 	{
 		title: 'Economic Empowerment',
@@ -50,6 +53,7 @@ const programs = [
 				</li>
 			</ul>
 		),
+		backgroundImage: '/youth-empower-img.jpg',
 	},
 ];
 
@@ -95,23 +99,29 @@ function Home() {
 
 			<section className="programs-section">
 				<h2 className="programs-title">Our Programs &amp; Services</h2>
-				<div className="programs-nav">
-					{programs.map((p, idx) => (
-						<button
-							key={p.title}
-							className={`programs-tab${active === idx ? ' active' : ''}`}
-							onClick={() => setActive(idx)}
-						>
-							{p.title}
-						</button>
-					))}
+				<div className="programs-wrapper">
+					<div className="program-tab-container">
+						{programs.map((program, index) => (
+							<button
+								key={index}
+								className={`programs-tab ${active === index ? 'active' : ''}`}
+								onClick={() => setActive(index)}
+							>
+								{program.title}
+							</button>
+						))}
+					</div>
+									<div className="programs-content">
+									  <div className="program-card">
+									    <h3 className="program-title">{programs[active].title}</h3>
+									    <div className="program-details">{programs[active].content}</div>
+									  </div>
+									  <div className="program-background">
+										<img src={programs[active].backgroundImage} alt="background" srcSet="" />
+									  </div>
+									</div>
 				</div>
-
-				<div className="programs-content">{programs[active].content}</div>
-				<p className="programs-message">
-					By the end of their journey, youth are equipped to launch careers, pursue independence, or grow their dreams into reality.
-				</p>
-			</section>
+			</section>					
 
 			<section className="promise-section">
 				<h2 className="promise-title">Our Promise</h2>
