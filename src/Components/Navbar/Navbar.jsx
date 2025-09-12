@@ -65,7 +65,7 @@ function Navbar() {
           )}
         </div>
         <div className="navbar-right">
-          <button className="donate-btn">Donate</button>
+          <Link to="/donate" className="donate-btn">Donate</Link>
         </div>
       </nav>
     </>
