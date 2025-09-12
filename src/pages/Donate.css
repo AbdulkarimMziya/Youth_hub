@@ -1,0 +1,18 @@
+.donate-container {
+  padding: 3rem 1rem;
+  max-width: 600px;
+  margin: 4rem auto 0 auto;
+  text-align: center;
+  background: #f7fafc;
+  border-radius: 1.2rem;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+.donate-container h2 {
+  font-size: 2rem;
+  color: #1a3a3a;
+  margin-bottom: 1rem;
+}
+.donate-container p {
+  color: #3a4a4a;
+  font-size: 1.1rem;
+}
