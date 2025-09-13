@@ -5,6 +5,7 @@ import AboutUs from '../pages/AboutUs';
 import WhyYouth from '../pages/WhyYouth';
 import PlanOfAction from '../pages/PlanOfAction';
 import Donate from '../pages/Donate';
+import Signup from '../pages/Signup';
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: 'donate',
         element: <Donate />,
+      },
+      {
+        path: 'signup',
+        element: <Signup />,
       }
     ],
   },
