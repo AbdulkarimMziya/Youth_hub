@@ -1,0 +1,106 @@
+.staff-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: stretch;
+}
+.staff-form h3 {
+    margin-bottom: 0.5rem;
+    color: #26c6da;
+    text-align: left;
+}
+.staff-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    color: #1a3a3a;
+    text-align: left;
+}
+.staff-form input,
+.staff-form textarea {
+    margin-top: 0.3rem;
+    padding: 0.7rem;
+    border: 1px solid #b2ebf2;
+    color: #000;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: #fff;
+    resize: vertical;
+}
+.staff-form textarea {
+    min-height: 80px;
+}
+.staff-form button {
+    background: linear-gradient(90deg, #26c6da 60%, #f6c354 100%);
+    color: #fff;
+    border: none;
+    border-radius: 2rem;
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background 0.18s, color 0.18s;
+}
+.staff-form-success {
+    text-align: center;
+    color: #26c6da;
+    font-size: 1.2rem;
+    padding: 2rem 0;
+}
+
+.form-error {
+    color: #e53935;
+    font-size: 0.98rem;
+    margin-top: 0.2rem;
+    margin-bottom: -0.5rem;
+    padding-left: 0.1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    display: block;
+}
+
+.staff-form label {
+    margin-bottom: 0.2rem;
+}
+
+.staff-form input,
+.staff-form textarea,
+.staff-form select {
+    margin-bottom: 0.1rem;
+}
+
+.staff-form select {
+    background: #fff url('data:image/svg+xml;utf8,<svg fill="%23008080" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 0.8rem center/1.2em 1.2em;
+    padding-right: 2.2em;
+    cursor: pointer;
+}
+
+.staff-form select {
+    margin-top: 0.3rem;
+    padding: 0.7rem;
+    border: 1px solid #b2ebf2;
+    color: #000;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    transition: border 0.18s, box-shadow 0.18s;
+    box-shadow: none;
+}
+.staff-form select:focus {
+    border-color: #26c6da;
+    box-shadow: 0 0 0 2px #b2ebf2;
+}
+.staff-form select.error {
+    border-color: #e53935 !important;
+}
+
+input:invalid {
+  border: 2px solid red;
+}
+
