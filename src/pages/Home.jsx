@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 const programs = [
@@ -69,32 +70,37 @@ function Home() {
 					<p className="hero-tagline">
 						At Youth Prime Hub Society, we empower, educate, and equip young people to turn their dreams into reality — and no one has to do it alone.
 					</p>
-					<a href="#" className="hero-cta btn">
+					<Link to="/signup" className="hero-cta btn">
 						Start your journey today
-					</a>
+					</Link>
 				</div>
 			</section>
 
 			<section className="about-section">
 				<h2 className="about-title">About Us</h2>
-				<p className="about-desc">Youth Prime Hub Society is a community-driven space for young people ages 14–24.</p>
+				<p className="about-desc">
+					At Youth Prime Hub Society, we believe every young person has the power to create their own story. Our vibrant community is designed for dreamers, doers, and future leaders ages 14–24 who want to make a real impact.
+				</p>
 				<ul className="about-list">
 					<li>
-						<strong>Dream boldly</strong> with vision and purpose.
+						<strong>Ignite your passion</strong> and turn ideas into action.
 					</li>
 					<li>
-						<strong>Grow knowledge</strong> through education and skills training.
+						<strong>Unlock new skills</strong> with hands-on learning and real-world experiences.
 					</li>
 					<li>
-						<strong>Gain experience</strong> with mentorship and industry opportunities.
+						<strong>Connect with mentors</strong> and a network that supports your growth.
 					</li>
 					<li>
-						<strong>Lead change</strong> in their communities.
+						<strong>Lead positive change</strong> in your community and beyond.
 					</li>
 				</ul>
 				<p className="about-message">
-					Together, we’re raising a generation of confident, resilient leaders shaping a brighter tomorrow.
+					Curious about how you can get involved, grow, and thrive with us?
 				</p>
+				<Link to="/about-us" className="about-cta btn">
+					Learn More
+				</Link>
 			</section>
 
 			<section className="programs-section">
@@ -139,6 +145,26 @@ function Home() {
 						<span className="promise-text"><strong>Build</strong> confidence, skills, and independence for a brighter future.</span>
 					</li>
 				</ul>
+			</section>
+
+			{/* CTA Section */}
+			<section className="cta-section">
+				<h2 className="cta-title">Ready to take action?</h2>
+				<p className="cta-desc">
+					There are lots of great ways to make a difference. Take action today, and help us empower youth for a brighter future.
+				</p>
+				<div className="cta-cards">
+					<div className="cta-card">
+						<h3>Join the Team</h3>
+						<p>Become a member, volunteer, or mentor and help shape tomorrow's leaders.</p>
+						<Link to="/signup" className="cta-btn btn">Join Now</Link>
+					</div>
+					<div className="cta-card">
+						<h3>Donate</h3>
+						<p>Your support helps us provide programs, mentorship, and opportunities for youth.</p>
+						<Link to="/donate" className="cta-btn btn btn-secondary">Donate</Link>
+					</div>
+				</div>
 			</section>
 		</div>
 	);
