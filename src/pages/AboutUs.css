@@ -1,0 +1,520 @@
+
+/* Center section titles */
+.aboutus-hero-title,
+.aboutus-story-title,
+.aboutus-values-title,
+.aboutus-team-title,
+.aboutus-mv-mission h2,
+.aboutus-mv-vision h2 {
+  margin: 0 auto;
+ 
+}
+
+
+@media (max-width: 600px) {
+  .aboutus-hero {
+    min-height: 40vh;
+    padding: 1.2rem 0.2rem;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .aboutus-hero-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .aboutus-story-quote {
+    font-size: 1.2rem;
+    padding-left: 0.7rem;
+    margin-bottom: 1rem;
+  }
+  .aboutus-story-title {
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .aboutus-story-text {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    max-width: 98vw;
+  }
+  .aboutus-mv-block {
+    padding: 1.2rem 0.7rem;
+    min-width: 90vw;
+  }
+
+  .aboutus-values-title,
+  .aboutus-team-title {
+    font-size: 1.3rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1rem;
+  }
+  .aboutus-value-card {
+    min-width: 90vw;
+    max-width: 98vw;
+    padding: 1.2rem 0.5rem;
+  }
+  .aboutus-team-photo {
+    width: 60px;
+    height: 60px;
+  }
+  .aboutus-team-name {
+    font-size: 1rem;
+  }
+  .aboutus-team-role {
+    font-size: 0.95rem;
+  }
+  .aboutus-cta-footer {
+    flex-direction: column;
+    padding: 1.2rem 0.5rem;
+    margin-top: 1.2rem;
+  }
+  .aboutus-cta-footer-text {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .aboutus-cta-footer-btn {
+    font-size: 1rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* ========================= */
+/* Hero Section              */
+/* ========================= */
+.aboutus-hero {
+  position: relative;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.aboutus-stat {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  min-width: 180px;
+  margin: 1rem 0;
+}
+
+.aboutus-stat-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffb300;
+  margin-bottom: 0.5rem;
+}
+
+.aboutus-stat-label {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* ========================= */
+/* Our Story Section         */
+/* ========================= */
+.aboutus-story-quote {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #222;
+  border-left: 6px solid #ffb300;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.aboutus-story-text {
+  font-size: 1.15rem;
+  color: #444;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ========================= */
+/* Mission & Vision Section  */
+/* ========================= */
+.aboutus-mv-container {
+  display: flex;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.aboutus-mv-block {
+  flex: 1 1 320px;
+  background: #f7f7f7;
+  border-radius: 1.2rem;
+  padding: 2rem 1.5rem;
+  min-width: 280px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  border-left: 5px solid #ffb300;
+}
+
+.aboutus-mv-block h2 {
+  color: #000000;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.aboutus-mv-block p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* ========================= */
+/* Core Values Section       */
+/* ========================= */
+.aboutus-values-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.aboutus-values-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.aboutus-value-card {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem;
+  min-width: 220px;
+  max-width: 260px;
+  flex: 1 1 220px;
+  text-align: center;
+  transition: transform 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+}
+
+.aboutus-value-card:hover {
+  transform: translateY(-8px) scale(1.04);
+  box-shadow: 0 6px 24px rgba(255,179,0,0.13);
+}
+
+.aboutus-value-card h3 {
+  color: #ffb300;
+  font-size: 1.25rem;
+  margin-bottom: 0.7rem;
+}
+
+.aboutus-value-card p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* ========================= */
+/* Leadership Team Section   */
+/* ========================= */
+.aboutus-team-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.aboutus-team-subtitle {
+  text-align: center;
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.aboutus-team-filters {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.aboutus-team-filter {
+  background: #f7f7f7;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.6rem 1.8rem;
+  font-size: 1rem;
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.aboutus-team-filter.active,
+.aboutus-team-filter:hover {
+  background: #ffb300;
+  color: #fff;
+}
+
+.aboutus-team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.aboutus-team-member {
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 1.5rem 1.2rem;
+  min-width: 200px;
+  max-width: 220px;
+  flex: 1 1 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aboutus-team-photo {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #ffb300;
+}
+
+.aboutus-team-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.3rem;
+}
+
+.aboutus-team-role {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* ========================= */
+/* Call-to-Action Footer     */
+/* ========================= */
+.aboutus-cta-footer {
+  width: 100%;
+  background: linear-gradient(90deg, #ffb300 70%, #fffbe6 100%);
+  position: relative;
+  padding: 2.2rem 0.5rem 2.2rem 0.5rem;
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.aboutus-cta-footer::before {
+  content: '';
+  opacity: 0.08;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 220px;
+  height: 220px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.aboutus-cta-footer-content {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.aboutus-cta-footer-logo {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(255,179,0,0.12);
+  object-fit: contain;
+  border: 2px solid #ffb300;
+  margin-right: 1.2rem;
+}
+
+.aboutus-cta-footer-text {
+  font-size: 1.25rem;
+  color: #222;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  margin-right: 1.2rem;
+}
+
+.aboutus-cta-footer-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 1.1rem;
+  padding: 0.8rem 1.7rem;
+  background: #fff;
+  color: #ffb300;
+  border: 2px solid #ffb300;
+  border-radius: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 12px rgba(255,179,0,0.10);
+  transition: background 0.18s, color 0.18s, border 0.18s;
+}
+
+.aboutus-cta-footer-btn-logo {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  object-fit: contain;
+  background: #fffbe6;
+  border: 1.5px solid #ffb300;
+}
+.aboutus-cta-footer-btn:hover {
+  background: #ffb300;
+  color: #fff;
+  border: 2px solid #ff8800;
+}
+
+/* AboutUs.css */
+
+.aboutus-hero {
+  position: relative;
+  min-height: 60vh;
+  background: url('/public/youth-empower-img.jpg') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutus-hero-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.aboutus-hero-title {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  z-index: 2;
+}
+
+.aboutus-hero-cta {
+  background: #ffb300;
+  color: #222;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-weight: 600;
+  z-index: 2;
+  transition: background 0.2s;
+}
+
+.aboutus-hero-cta:hover {
+  background: #ff8800;
+}
+
+/* Placeholder for other sections */
+.aboutus-stats,
+.aboutus-story,
+.aboutus-mission-vision,
+.aboutus-values,
+.aboutus-team {
+  margin: 3rem auto;
+  max-width: 1100px;
+  padding: 2rem 1rem;
+}
+
+.aboutus-stats-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.aboutus-stat {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 2rem 2.5rem;
+  text-align: center;
+  min-width: 180px;
+  margin: 1rem 0;
+}
+
+.aboutus-stat-number {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #ffb300;
+  margin-bottom: 0.5rem;
+}
+
+.aboutus-stat-label {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Call-to-Action Footer Banner */
+.aboutus-cta-footer {
+  width: 100%;
+  background: linear-gradient(90deg, #ffb300 0%, #ff8800 100%);
+  padding: 2.5rem 1rem 2.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.aboutus-cta-footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.aboutus-cta-footer-text {
+  color: #fff;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.aboutus-cta-footer-btn {
+  background: #fff;
+  color: #ff8800;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+.aboutus-cta-footer-btn:hover {
+  background: #ff8800;
+  color: #fff;
+}
