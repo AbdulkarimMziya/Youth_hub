@@ -59,7 +59,7 @@ function PlanOfAction() {
 
       <section className="approach">
         <div className="wrapper">
-          <h2>Our Approach</h2>
+          <h2 className="approach-title">Our Approach</h2>
           <div className="content">
             <p>
               We don’t believe in one-size-fits-all programs. Instead, we design a <strong>progressive pathway</strong> that combines life skills, mentorship, real-world opportunities, and long-term support.
@@ -68,15 +68,21 @@ function PlanOfAction() {
               But our work doesn’t end when the workshops are over or when a youth gets their first job.<br/>We stay committed to:
             </p>
             <div className="core-values">
-              <span className="icon">
+              <div className="core-value-card">
+                <span className="core-value-emoji" role="img" aria-label="Mentorship">🤝</span>
                 <h4>Mentorship</h4>
-              </span>
-              <span className="icon">
+                <p>Guiding youth with experience, wisdom, and encouragement every step of the way.</p>
+              </div>
+              <div className="core-value-card">
+                <span className="core-value-emoji" role="img" aria-label="Accountability">🧭</span>
                 <h4>Accountability</h4>
-              </span>
-              <span className="icon">
+                <p>Building trust and responsibility through honest feedback and shared goals.</p>
+              </div>
+              <div className="core-value-card">
+                <span className="core-value-emoji" role="img" aria-label="Community">🌱</span>
                 <h4>Community</h4>
-              </span>
+                <p>Fostering a sense of belonging and support for every young person.</p>
+              </div>
             </div>
           </div>  
         </div>
