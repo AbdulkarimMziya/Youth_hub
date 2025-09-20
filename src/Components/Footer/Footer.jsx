@@ -1,4 +1,6 @@
+
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 // Social media icon components using inline SVG
 const FacebookIcon = () => (
@@ -34,13 +36,13 @@ export default function Footer() {
             <span className="footer-logo">Youth Prime Hub</span>
             <p className="footer-tagline">Empowering Youth. Inspiring Futures.</p>
         </div>
-        <nav className="footer-links">
-            <a href="/" className="footer-link">Home</a>
-            <a href="/about-us" className="footer-link">About Us</a>
-            <a href="/signup" className="footer-link">Join</a>
-            <a href="/donate" className="footer-link">Donate</a>
-            <a href="/plan-of-action" className="footer-link">Plan of Action</a>
-        </nav>
+    <nav className="footer-links">
+      <Link to="/" className="footer-link">Home</Link>
+      <Link to="/about-us" className="footer-link">About Us</Link>
+      <Link to="/signup" className="footer-link">Join</Link>
+      <Link to="/donate" className="footer-link">Donate</Link>
+      <Link to="/plan-of-action" className="footer-link">Plan of Action</Link>
+    </nav>
         <div className="footer-contact">
             <div className="contact-heading">Contact Us</div>
             <div className="contact-item">
