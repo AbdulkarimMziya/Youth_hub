@@ -20,27 +20,76 @@ main {
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3.2rem;
+  line-height: 1.12;
   color: var(--color-primary);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  margin-top: 2.5rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
 }
 
 /* Add vector background to all h2 elements */
 h2 {
-        position: relative;
-        z-index: 1;
-        background: url('/vector-1.png') no-repeat center center;
-        background-size: cover;
-        height: 80px;           
-        display: flex;           
-        align-items: center;
-        justify-content: center; 
-        padding: 0;              
-        margin: 0 auto 1.5rem;
-        font-weight: 700;
-        font-size: 1.5rem;         
-        text-align: center;
-        line-height: 1.2;
-        width: 60%;
+  position: relative;
+  z-index: 1;
+  background: url('/vector-1.png') no-repeat center center;
+  background-size: cover;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-weight: 800;
+  font-size: 2.1rem;
+  text-align: center;
+  line-height: 1.18;
+  width: 70%;
+  letter-spacing: 0.01em;
+/* Global h3 improvements */
+h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+  letter-spacing: 0.01em;
+}
+/* Global paragraph improvements */
+p {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  color: #222;
+}
+/* Global list improvements */
+ul, ol {
+  margin-left: 2rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: #222;
+}
+}
+
+@media (max-width: 600px) {
+  h2 {
+    height: 60px;
+    font-size: 1.3rem;
+    width: 90%;
+  }
+  h1 {
+    font-size: 2.1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.7rem;
+  }
+  p, ul, ol {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
 }
