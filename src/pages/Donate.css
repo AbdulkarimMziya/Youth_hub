@@ -1,18 +1,96 @@
+
 .donate-container {
-  padding: 3rem 1rem;
-  max-width: 600px;
+  padding: 3rem 1.2rem 2.5rem 1.2rem;
+  max-width: 420px;
   margin: 4rem auto 0 auto;
   text-align: center;
   background: #f7fafc;
   border-radius: 1.2rem;
   box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
 }
 .donate-container h2 {
-  font-size: 2rem;
-  color: #1a3a3a;
-  margin-bottom: 1rem;
+  font-size: 2.1rem;
+  color: #008080;
+  margin-bottom: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -1px;
 }
-.donate-container p {
-  color: #3a4a4a;
-  font-size: 1.1rem;
+.donate-desc {
+  color: #1a3a3a;
+  font-size: 1.13rem;
+  margin-bottom: 2.2rem;
+  line-height: 1.5;
+}
+.donate-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px rgba(0,128,128,0.07);
+  padding: 2rem 1.2rem 1.5rem 1.2rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.2rem;
+}
+.donate-amounts {
+  display: flex;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.donate-amount-btn {
+  background: #e0f7fa;
+  color: #008080;
+  border: 2px solid #b2ebf2;
+  border-radius: 2rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.08rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s, border 0.18s;
+  outline: none;
+}
+.donate-amount-btn:hover,
+.donate-amount-btn.active {
+  background: linear-gradient(90deg, #008080 60%, #ffe066 100%);
+  color: #fff;
+  border: none;
+}
+.donate-main-btn {
+  background: linear-gradient(90deg, #008080 60%, #ffe066 100%);
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,128,128,0.08);
+  transition: background 0.18s, color 0.18s;
+}
+.donate-main-btn:hover {
+  background: linear-gradient(90deg, #26c6da 60%, #ffe066 100%);
+  color: #fff;
+}
+.donate-note {
+  color: #888;
+  font-size: 0.98rem;
+  margin-top: 1.2rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 600px) {
+  .donate-container {
+    max-width: 100vw;
+    border-radius: 0;
+    margin: 0;
+    padding: 1.2rem 0.2rem 1.2rem 0.2rem;
+  }
+  .donate-card {
+    border-radius: 0.7rem;
+    padding: 1.2rem 0.2rem 1rem 0.2rem;
+  }
 }
