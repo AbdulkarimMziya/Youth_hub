@@ -1,5 +1,13 @@
 /* Theme utility classes based on logo colors */
 
+:root {
+  /* Theme colors from logo */
+  --color-primary: rgb(0, 84, 84);
+  --color-secondary: rgb(246, 207, 82);
+  --color-accent-1: rgb(139, 162, 125);
+  --color-accent-2: rgb(184, 128, 74);
+}
+
 /* Section backgrounds - used for specific sections, not the entire page */
 .section-primary {
   background-color: var(--color-primary);
