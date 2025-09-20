@@ -125,6 +125,10 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
+.highlight-title {
+    margin: 0 auto;
+}
+
 .highlight-item h3 {
     font-size: 1rem;
     font-weight: 600;

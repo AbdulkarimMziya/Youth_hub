@@ -27,7 +27,7 @@ function WhyYouthPage() {
         {/* Highlight Section */}
         <section className="highlight">
             <div className="highlight-wrapper">
-                <h2>Youth support changes everything.</h2>
+                <h2 className="highlight-title">Youth support changes everything.</h2>
                 <div className="highlight-content">
                     <div className="highlight-item">
                         <h3>Health</h3>
@@ -73,12 +73,19 @@ function WhyYouthPage() {
             </div>
         </section>
 
-      {/* {Call to actions} */}
-      <section className="call-to-action">
-        <h2>You can help transform lives.</h2>
-        <p>Every hour of mentorship, every safe space created, every opportunity given helps youth rise above risks and thrive.</p>
-        <a href="#" className="btn">Get Involved</a>
-      </section>
+
+            {/* {Call to actions} */}
+            <section className="call-to-action video-bg-section">
+                <video className="video-bg" autoPlay loop muted playsInline>
+                    <source src="/youth-mentor-clip.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <div className="cta-content">
+                    <h2>You can help transform lives.</h2>
+                    <p>Every hour of mentorship, every safe space created, every opportunity given helps youth rise above risks and thrive.</p>
+                    <a href="#" className="btn">Get Involved</a>
+                </div>
+            </section>
 
       </div>
     </>
