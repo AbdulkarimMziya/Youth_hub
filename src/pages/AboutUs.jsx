@@ -38,7 +38,7 @@ function AboutUs() {
           src="/youth-leadership-img.jpg" 
           alt="Valentine Uwakwe - Founder" 
           className="aboutus-leader-img"
-          style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 1rem', display: 'block' }}
+          style={{ width: '220px', height: '220px', borderRadius: '50%', objectFit: 'cover', margin: '0 auto 1rem', display: 'block', border: '5px solid #008080' }}
         />
         <blockquote className="aboutus-story-quote">
             “We exist to turn What ifs into I can...”
