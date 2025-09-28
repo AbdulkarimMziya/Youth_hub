@@ -505,7 +505,7 @@
 .aboutus-cta-footer-btn {
   background: #fff;
   color: #ff8800;
-  border: none;
+  border: 2px solid #008080;
   border-radius: 2rem;
   padding: 0.9rem 2.2rem;
   font-size: 1.15rem;
@@ -516,5 +516,6 @@
 }
 .aboutus-cta-footer-btn:hover {
   background: #ff8800;
+  border: 2px solid #008080;
   color: #fff;
 }
