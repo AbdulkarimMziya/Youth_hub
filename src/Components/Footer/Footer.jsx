@@ -32,7 +32,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-content">
         <div className="footer-brand">
-            <img src="/logo-transparent-bg.png" alt="Youth Prime Hub Logo" className="footer-logo-img" style={{ height: '48px', marginBottom: '0.4rem' }} />
+            <img src="/logo-transparent-bg.png" alt="Youth Prime Hub Logo" className="footer-logo-img" style={{ height: '130px', marginBottom: '0.4rem' }} />
             <span className="footer-logo">Youth Prime Hub Society</span>
             <p className="footer-tagline">Empowering Youth. Inspiring Futures.</p>
         </div>
