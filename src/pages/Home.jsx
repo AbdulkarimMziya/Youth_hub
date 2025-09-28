@@ -64,7 +64,7 @@ function Home() {
 	return (
 		<div className="container">
 			<section className="hero-section">
-				<h2>Youth Prime Social Hub</h2>
+				<h2>Youth Prime Hub Society</h2>
 				<div className="hero-content">
 					<h1 className="hero-title">Empowering Youth. Shaping Futures.</h1>
 					<p className="hero-tagline">

@@ -8,7 +8,7 @@ export default function Signup() {
     return (
         <div className="signup-hero">
             <header className="hero-header">
-                <h1>Join Youth Prime Hub</h1>
+                <h1>Join the Youth</h1>
                 <p>
                     Become a part of our vibrant community. Sign up as a <strong>Youth Member</strong> to participate in our programs, or as a <strong>Staff Member</strong> to help guide and support youth.
                 </p>

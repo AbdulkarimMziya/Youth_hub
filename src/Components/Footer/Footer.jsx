@@ -33,7 +33,7 @@ export default function Footer() {
       <div className="footer-content">
         <div className="footer-brand">
             <img src="/logo-transparent-bg.png" alt="Youth Prime Hub Logo" className="footer-logo-img" style={{ height: '48px', marginBottom: '0.4rem' }} />
-            <span className="footer-logo">Youth Prime Hub</span>
+            <span className="footer-logo">Youth Prime Hub Society</span>
             <p className="footer-tagline">Empowering Youth. Inspiring Futures.</p>
         </div>
     <nav className="footer-links">
@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Youth Prime Hub. All rights reserved.</span>
+            <span>© {new Date().getFullYear()} Youth Prime Hub Society. All rights reserved.</span>
       </div>
     </footer>
   );

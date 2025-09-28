@@ -5,7 +5,7 @@ import './Donate.css';
 export default function Donate() {
   return (
     <div className="donate-container">
-      <h2>Support Youth Prime Hub</h2>
+      <h2>Support the Youth</h2>
       <p className="donate-desc">
         Your donation empowers youth with skills, mentorship, and opportunities. Every contribution helps us reach more young people and create lasting impact.
       </p>
