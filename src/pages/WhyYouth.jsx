@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './WhyYouth.css';
 
 function WhyYouthPage() {
@@ -83,7 +84,7 @@ function WhyYouthPage() {
                 <div className="cta-content">
                     <h2>You can help transform lives.</h2>
                     <p>Every hour of mentorship, every safe space created, every opportunity given helps youth rise above risks and thrive.</p>
-                    <a href="#" className="btn">Get Involved</a>
+                    <Link to="/signup" className="btn">Get Involved</Link>
                 </div>
             </section>
 
