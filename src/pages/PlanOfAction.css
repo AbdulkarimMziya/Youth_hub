@@ -322,7 +322,7 @@ header {
 .commitment-section {
     width: 100%;
     max-width: 800px;
-    margin: 4rem auto 0 auto;
+    margin: 4rem auto;
     border-radius: 12px;
     padding: 2.5rem 2rem;
     text-align: center;
