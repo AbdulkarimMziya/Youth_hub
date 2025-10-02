@@ -118,7 +118,7 @@
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--main-dark);
-    margin-bottom: 0.5rem;
+    margin: 0 auto 0.5rem auto;
     text-align: center;
 }
 
