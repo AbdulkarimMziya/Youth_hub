@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './AboutUs.css';
 
 
@@ -9,8 +10,10 @@ function AboutUs() {
       {/* Hero Section */}
       <section className="aboutus-hero">
         <div className="aboutus-hero-overlay">
-          <h1 className="aboutus-hero-title">Empowering Youth. Shaping Futures.</h1>
-          <button className="aboutus-hero-cta">Join the Movement</button>
+          <h1 className="aboutus-hero-title">Empowering, Educate, and Equip.</h1>
+          <Link to="/signup">
+            <button className="aboutus-hero-cta">Join the Movement</button>
+          </Link>
         </div>
       </section>
 
@@ -75,23 +78,27 @@ function AboutUs() {
         <h2 className="aboutus-values-title">Our Core Values</h2>
         <div className="aboutus-values-cards">
           <div className="aboutus-value-card">
-            <h3>Discipline</h3>
+            <h3>Purpose</h3>
             <p>We foster self-motivation, focus, and accountability in all we do.</p>
           </div>
           <div className="aboutus-value-card">
-            <h3>Empowerment</h3>
+            <h3>Resilience</h3>
             <p>We equip youth with tools and confidence to lead and succeed.</p>
           </div>
           <div className="aboutus-value-card">
-            <h3>Excellence</h3>
+            <h3>Innovation</h3>
             <p>We strive for the highest standards in our programs and impact.</p>
           </div>
           <div className="aboutus-value-card">
-            <h3>Community</h3>
+            <h3>Mentorship</h3>
             <p>We build strong, supportive networks for collective growth.</p>
           </div>
           <div className="aboutus-value-card">
-            <h3>Integrity</h3>
+            <h3>Excellence</h3>
+            <p>We act with honesty, transparency, and respect at all times.</p>
+          </div>
+          <div className="aboutus-value-card">
+            <h3>Discipline</h3>
             <p>We act with honesty, transparency, and respect at all times.</p>
           </div>
         </div>
@@ -104,60 +111,16 @@ function AboutUs() {
         <div className="aboutus-team-grid">
           {/* Board Members */}
           <div className="aboutus-team-member">
-            <img src="/youth-leadership-img.jpg" alt="Barr Morgan" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Barr Morgan</div>
-            <div className="aboutus-team-role">Executive Director / Founder<br/>Interior Academy, Kamloops Film Society ED, CMHA</div>
+            <img src="/youth-leadership-img.jpg" alt="Valentine Uwakwe" className="aboutus-team-photo" />
+            <div className="aboutus-team-name">Valentine Uwakwe</div>
+            <div className="aboutus-team-role">Founder<br/>Interior Academy, Kamloops Film Society ED, CMHA</div>
           </div>
-          <div className="aboutus-team-member">
-            <img src="/youth-growth-img.jpg" alt="Bryce Colin" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Bryce Colin</div>
-            <div className="aboutus-team-role">Venture Kamloops</div>
-          </div>
-          <div className="aboutus-team-member">
-            <img src="/youth-skills-img.jpg" alt="Jim Chris" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Jim Chris</div>
-            <div className="aboutus-team-role">Financial Advisor</div>
-          </div>
-          <div className="aboutus-team-member">
-            <img src="/youth-empower-img.jpg" alt="Julie Holmes" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Julie Holmes</div>
-            <div className="aboutus-team-role">Board Member</div>
-          </div>
+          
           {/* Coordinators */}
-          <div className="aboutus-team-member">
-            <img src="/youth-leadership-img.jpg" alt="Programs & Training Coordinator" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Programs & Training Coordinator</div>
-            <div className="aboutus-team-role">Oversees mentorship, workshops, bootcamps, and all youth development programs</div>
-          </div>
           <div className="aboutus-team-member">
             <img src="/youth-growth-img.jpg" alt="Abdul Mziya" className="aboutus-team-photo" />
             <div className="aboutus-team-name">Abdul Mziya</div>
             <div className="aboutus-team-role">Media & Communications Coordinator<br/>Branding, social media, website, publicity, storytelling</div>
-          </div>
-          <div className="aboutus-team-member">
-            <img src="/youth-skills-img.jpg" alt="Finance & Fundraising Coordinator" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Finance & Fundraising Coordinator</div>
-            <div className="aboutus-team-role">Manages finances, budgeting, fundraising campaigns, donor relations</div>
-          </div>
-          <div className="aboutus-team-member">
-            <img src="/youth-empower-img.jpg" alt="Legal & Compliance Coordinator" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Legal & Compliance Coordinator</div>
-            <div className="aboutus-team-role">Ensures the society follows regulations, policies, and ethical standards</div>
-          </div>
-          <div className="aboutus-team-member">
-            <img src="/youth-leadership-img.jpg" alt="Community Engagement & Partnerships Coordinator" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Community Engagement & Partnerships Coordinator</div>
-            <div className="aboutus-team-role">Builds relationships with schools, industries, organizations, sponsors</div>
-          </div>
-          <div className="aboutus-team-member">
-            <img src="/youth-growth-img.jpg" alt="Youth Engagement & Welfare Coordinator" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Youth Engagement & Welfare Coordinator</div>
-            <div className="aboutus-team-role">Talent discovery, counseling, inclusion, and well-being of youth</div>
-          </div>
-          <div className="aboutus-team-member">
-            <img src="/youth-skills-img.jpg" alt="Events & Outreach Coordinator" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Events & Outreach Coordinator</div>
-            <div className="aboutus-team-role">Plans and coordinates community events, campaigns, outreach activities</div>
           </div>
         </div>
       </section>
@@ -167,10 +130,12 @@ function AboutUs() {
         <div className="aboutus-cta-footer-content">
           <img src="/logo-transparent-bg.png" alt="Youth Hub Logo" className="aboutus-cta-footer-logo" />
           <span className="aboutus-cta-footer-text">Together, we’re creating confident leaders for tomorrow.</span>
-          <button className="aboutus-cta-footer-btn">
-            <img src="/logo-transparent-bg.png" alt="Youth Hub Logo" className="aboutus-cta-footer-btn-logo" />
-            <span>Get Involved</span>
-          </button>
+          <Link to="/donate" style={{ textDecoration: 'none' }}>
+            <button className="aboutus-cta-footer-btn">
+              <img src="/logo-transparent-bg.png" alt="Youth Hub Logo" className="aboutus-cta-footer-btn-logo" />
+              <span>Get Involved</span>
+            </button>
+          </Link>
         </div>
       </footer>
     </div>
