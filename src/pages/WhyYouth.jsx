@@ -15,7 +15,7 @@ function WhyYouthPage() {
 
         {/* Sub-Introduction */}
         <section className="sub-intro">
-            <h2 className="stat">73% of Canadian youth aged 15–24 <br /> report drinking alcohol in the past year.</h2>
+            <h2 className="stat title-bg">73% of Canadian youth aged 15–24 <br /> report drinking alcohol in the past year.</h2>
             <p>
                 That's nearly 3 in 4
                 young people. For many, alcohol becomes more than just a social activity—it's a distraction
