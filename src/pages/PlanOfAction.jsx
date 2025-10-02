@@ -59,7 +59,7 @@ function PlanOfAction() {
 
       <section className="approach">
         <div className="wrapper">
-          <h2 className="approach-title">Our Approach</h2>
+          <h2 className="approach-title title-bg">Our Approach</h2>
           <div className="content">
             <p>
               We don’t believe in one-size-fits-all programs. Instead, we design a <strong>progressive pathway</strong> that combines life skills, mentorship, real-world opportunities, and long-term support.
@@ -91,7 +91,7 @@ function PlanOfAction() {
 
       {/* Horizontal Accordion Section Only */}
       <section className="stages">
-        <h2 className="stages-title">Your Journey: 4 Stages to Success</h2>
+        <h2 className="stages-title title-bg">Your Journey: 4 Stages to Success</h2>
         <div className="accordion">
           <div className="accordion-flex">
             {stagesData.map((stage, idx) => {
@@ -131,7 +131,7 @@ function PlanOfAction() {
       </section>
 
       <section className="commitment-section">
-        <h2 className="commitment-title">Our Commitment</h2>
+        <h2 className="commitment-title title-bg">Our Commitment</h2>
         <div className="commitment-content">
           <ul>
             <li>
