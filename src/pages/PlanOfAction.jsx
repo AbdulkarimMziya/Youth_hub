@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './PlanOfAction.css';
 
   const stagesData = [
@@ -148,8 +149,12 @@ function PlanOfAction() {
             </li>
           </ul>
           <div className="commitment-actions">
-            <button className="btn">Join the Journey</button>
-            <button className="btn btn-secondary">Donate Now</button>
+            <Link to="/signup">
+              <button className="btn">Join the Journey</button>
+            </Link>
+            <Link to="/donate">
+              <button className="btn btn-secondary">Donate Now</button>
+            </Link>
           </div>
         </div>
       </section>
