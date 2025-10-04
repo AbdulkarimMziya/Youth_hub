@@ -55,6 +55,9 @@ function Navbar() {
           {isMobile && <HamburgerIcon isOpen={menuOpen} onClick={toggleMenu} />}
           <Link to="/" className="logo">
             <img src="/logo-transparent-bg.png" alt="Logo" style={{ height: '50px', width: 'auto' }} />
+          <div style={{ fontWeight: 600, fontSize: '0.7rem', marginTop: '0.1rem', color: '#008080', letterSpacing: '0.05em' }}>
+            Empower.Educate.Equip
+          </div>
           </Link>
           {!isMobile && (
             <ul style={desktopNavLinksStyle}>
