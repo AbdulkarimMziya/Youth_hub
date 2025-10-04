@@ -34,7 +34,9 @@ export default function Footer() {
         <div className="footer-brand">
             <img src="/logo-transparent-bg.png" alt="Youth Prime Hub Logo" className="footer-logo-img" style={{ height: '130px', marginBottom: '0.4rem' }} />
             <span className="footer-logo">Youth Prime Hub Society</span>
-            <p className="footer-tagline">Empowering Youth. Inspiring Futures.</p>
+            <p className="footer-tagline" style={{ fontWeight: 600, marginTop: '0.1rem', letterSpacing: '0.05em' }}>
+              Empower.Educate.Equip
+            </p>
         </div>
     <nav className="footer-links">
       <Link to="/" className="footer-link">Home</Link>
