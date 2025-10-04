@@ -1,4 +1,3 @@
-
 /* Center section titles */
 .aboutus-hero-title,
 .aboutus-story-title,
@@ -474,6 +473,54 @@
   font-size: 1.1rem;
   color: #333;
   font-weight: 500;
+}
+
+/* ========================= */
+/* Partners Button & List    */
+/* ========================= */
+.aboutus-partners-btn {
+  background: #008080;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  padding: 0.9rem 2.2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  transition: background 0.18s, color 0.18s;
+}
+.aboutus-partners-btn:hover {
+  background: #005f5f;
+  color: #fffbe6;
+}
+.aboutus-partners-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 400px;
+}
+.aboutus-partners-list li {
+  background: #f7f7f7;
+  border-radius: 1.2rem;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  font-weight: 600;
+  color: #008080;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1);
+}
+.aboutus-partners-list.slide-hide li {
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+}
+.aboutus-partners-list.slide-show li {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Call-to-Action Footer Banner */
