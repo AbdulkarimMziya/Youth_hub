@@ -23,7 +23,7 @@ function HamburgerMenu({ isOpen, onClose }) {
   };
 
   const navLinkItemStyle = {
-    margin: '0.5rem 0',
+    margin: '1.5rem 0px 0.5rem',
     textAlign: 'left',
     padding: '0.5rem 0',
     borderBottom: '1px solid var(--color-primary)',

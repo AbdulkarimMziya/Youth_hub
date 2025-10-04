@@ -12,6 +12,7 @@ main {
   align-items: center;
   width: 100%;
   min-height: calc(100vh - 80px); /* Adjust based on your navbar height */
+  background-color: rgba(0,0,0,0.04);
 }
 
 .container {
