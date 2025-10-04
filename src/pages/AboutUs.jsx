@@ -4,7 +4,16 @@ import { Link } from 'react-router-dom';
 import './AboutUs.css';
 
 
+import{ useState } from 'react';
+
 function AboutUs() {
+  const [showPartners, setShowPartners] = useState(false);
+  const partners = [
+    'Interior Academy',
+    'Kamloops Film Society ED',
+    'CMHA',
+    'Other Community Partners'
+  ];
   return (
     <div className="aboutus-page">
       {/* Hero Section */}
@@ -123,6 +132,21 @@ function AboutUs() {
             <div className="aboutus-team-role">Media & Communications Coordinator<br/>Branding, social media, website, publicity, storytelling</div>
           </div>
         </div>
+      </section>
+
+      {/* Partners Button & List */}
+      <section className="aboutus-partners" style={{ textAlign: 'center', margin: '2rem 0' }}>
+        <button
+          className="aboutus-partners-btn"
+          onClick={() => setShowPartners((prev) => !prev)}
+        >
+          {showPartners ? 'Hide Partners' : 'View Partners'}
+        </button>
+        <ul className={`aboutus-partners-list ${showPartners ? 'slide-show' : 'slide-hide'}`}>
+          {partners.map((partner, idx) => (
+            <li key={idx}>{partner}</li>
+          ))}
+        </ul>
       </section>
 
       {/* Call-to-Action Footer Banner */}
