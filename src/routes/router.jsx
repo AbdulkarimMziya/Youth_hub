@@ -6,6 +6,7 @@ import WhyYouth from '../pages/WhyYouth';
 import PlanOfAction from '../pages/PlanOfAction';
 import Donate from '../pages/Donate';
 import Signup from '../pages/Signup';
+import YouthApplicationForm from '../pages/YouthApplicationForm';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
       {
         path: 'signup',
         element: <Signup />,
+      },
+      {
+        path: 'youth-application',
+        element: <YouthApplicationForm />,
       }
     ],
   },
