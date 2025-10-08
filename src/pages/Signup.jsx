@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import StaffForm from '../Components/StaffForm';
 import './Signup.css';
 
 export default function Signup() {
     const [activeTab, setActiveTab] = useState('youth');
+    const navigate = useNavigate();
 
     return (
         <div className="signup-hero">
@@ -36,6 +38,9 @@ export default function Signup() {
                     <p>
                         If you are between the ages of 14 and 24 and want to take part in our empowering programs, please continue with the youth member application.
                     </p>
+                    <button className="fill-form-btn" type="button" onClick={() => navigate('/youth-application')}>
+                        Fill Youth Member Form
+                    </button>
                 </div>
                 <div className={`tab-panel${activeTab === 'staff' ? ' active' : ''}`}
                     aria-hidden={activeTab !== 'staff'}>
