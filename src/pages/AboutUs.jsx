@@ -1,10 +1,7 @@
 
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './AboutUs.css';
-
-
-import{ useState } from 'react';
 
 function AboutUs() {
   const [showPartners, setShowPartners] = useState(false);
@@ -14,6 +11,45 @@ function AboutUs() {
     'CMHA',
     'Other Community Partners'
   ];
+  // values for the Core Values cards
+  const values = [
+    { title: 'Purpose', text: 'We foster self-motivation, focus, and accountability in all we do.' },
+    { title: 'Resilience', text: 'We equip youth with tools and confidence to lead and succeed.' },
+    { title: 'Innovation', text: 'We strive for the highest standards in our programs and impact.' },
+    { title: 'Mentorship', text: 'We build strong, supportive networks for collective growth.' },
+    { title: 'Excellence', text: 'We act with honesty, transparency, and respect at all times.' },
+    { title: 'Discipline', text: 'We act with honesty, transparency, and respect at all times.' }
+  ];
+
+  // refs for each card
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -10% 0px',
+      threshold: 0.15,
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // optionally unobserve once visible
+          obs.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // observe each card element
+    cardRefs.current.forEach((el) => {
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
   return (
     <div className="aboutus-page">
       {/* Hero Section */}
@@ -86,30 +122,16 @@ function AboutUs() {
       <section className="aboutus-values">
         <h2 className="aboutus-values-title">Our Core Values</h2>
         <div className="aboutus-values-cards">
-          <div className="aboutus-value-card">
-            <h3>Purpose</h3>
-            <p>We foster self-motivation, focus, and accountability in all we do.</p>
-          </div>
-          <div className="aboutus-value-card">
-            <h3>Resilience</h3>
-            <p>We equip youth with tools and confidence to lead and succeed.</p>
-          </div>
-          <div className="aboutus-value-card">
-            <h3>Innovation</h3>
-            <p>We strive for the highest standards in our programs and impact.</p>
-          </div>
-          <div className="aboutus-value-card">
-            <h3>Mentorship</h3>
-            <p>We build strong, supportive networks for collective growth.</p>
-          </div>
-          <div className="aboutus-value-card">
-            <h3>Excellence</h3>
-            <p>We act with honesty, transparency, and respect at all times.</p>
-          </div>
-          <div className="aboutus-value-card">
-            <h3>Discipline</h3>
-            <p>We act with honesty, transparency, and respect at all times.</p>
-          </div>
+          {values.map((value, index) => (
+            <div
+              ref={(el) => (cardRefs.current[index] = el)}
+              className="aboutus-value-card"
+              key={index}
+            >
+              <h3>{value.title}</h3>
+              <p>{value.text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
