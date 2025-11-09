@@ -1,0 +1,57 @@
+.eligibility {
+  margin: 1.25rem 0;
+  font-family: inherit;
+}
+
+.eligibility-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.05rem;
+  color: #1f2937;
+}
+
+.eligibility-details {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.25rem;
+  background: #ffffff;
+}
+
+.eligibility-summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 0.75rem 1rem;
+  display: block;
+  font-weight: 600;
+  background: linear-gradient(90deg,#f9fafb,#fff);
+  border-radius: 6px;
+  outline: none;
+}
+
+.eligibility-summary::-webkit-details-marker {
+  display: none;
+}
+
+.eligibility-content {
+  padding: 1rem;
+  color: #374151;
+  line-height: 1.5;
+}
+
+.eligibility-content h4 {
+  margin-top: 0;
+}
+
+.eligibility-content ol,
+.eligibility-content ul {
+  margin: 0.5rem 0 0.5rem 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .eligibility-summary {
+    padding: 0.6rem;
+    font-size: 0.95rem;
+  }
+  .eligibility-content {
+    padding: 0.75rem;
+  }
+}

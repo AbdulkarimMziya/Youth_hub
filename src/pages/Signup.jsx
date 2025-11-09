@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import StaffForm from '../Components/StaffForm';
+import Eligibility from '../Components/Eligibility/Eligibility';
+import '../Components/Eligibility/Eligibility.css';
 import './Signup.css';
 
 export default function Signup() {
     const [activeTab, setActiveTab] = useState('youth');
     const navigate = useNavigate();
+    const youthFormUrl = 'https://forms.gle/T8gaXYM3iWUMUeeG7'; // <-- replace with your Google Form link
 
     return (
         <div className="signup-hero">
@@ -38,9 +41,19 @@ export default function Signup() {
                     <p>
                         If you are between the ages of 14 and 24 and want to take part in our empowering programs, please continue with the youth member application.
                     </p>
-                    <button className="fill-form-btn" type="button" onClick={() => navigate('/youth-application')}>
+
+                    {/* Eligibility accordion (collapsed by default). Pass defaultOpen={true} if you want it expanded. */}
+                    <Eligibility />
+
+                    {/* External link to the Google Form (opens in a new tab) */}
+                    <a
+                        className="fill-form-btn"
+                        href={youthFormUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         Fill Youth Member Form
-                    </button>
+                    </a>
                 </div>
                 <div className={`tab-panel${activeTab === 'staff' ? ' active' : ''}`}
                     aria-hidden={activeTab !== 'staff'}>
