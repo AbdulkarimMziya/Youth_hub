@@ -37,6 +37,7 @@ export default function StaffForm() {
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -50,17 +51,41 @@ export default function StaffForm() {
         setErrors((prev) => ({ ...prev, [e.target.name]: fieldErrors[e.target.name] }));
   };
 
-  const handleSubmit = (e) => {
-        e.preventDefault();
-        const validationErrors = validate(form);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const validationErrors = validate(form);
+  setErrors(validationErrors);
+  setTouched({ name: true, email: true, phone: true, position: true, motivation: true });
 
-        setErrors(validationErrors);
-        setTouched({ name: true, email: true, phone: true, position: true, motivation: true });
-
-        if (Object.keys(validationErrors).length === 0) {
-            setSubmitted(true);
+  if (Object.keys(validationErrors).length === 0) {
+    setIsSubmitting(true);
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxqHh1aeEDF5iYQDm7V5iqm0jHAVsTLRRsrPE0hB_auTdTH9OcNIFBSFODKWDsh7_o/exec",
+        {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
         }
-  };
+      );
+
+
+      if (response && (response.ok || response.type === 'opaque')) {
+        setSubmitted(true);
+      } else {
+        console.error('Unexpected response while submitting form', response);
+        alert('Something went wrong. Please try again later.');
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Something went wrong. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+};
+
 
   if (submitted) {
     return <div className="staff-form-success">Thank you for your application!</div>;
@@ -137,7 +162,7 @@ export default function StaffForm() {
         />
         {errors.motivation && touched.motivation && <span className="form-error">{errors.motivation}</span>}
       </label>
-      <button type="submit">Submit Application</button>
+      <button type="submit" disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : 'Submit Application'}</button>
     </form>
   );
 }

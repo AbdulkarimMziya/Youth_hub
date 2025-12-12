@@ -9,16 +9,38 @@ function AboutUs() {
     'Interior Academy',
     'Kamloops Film Society ED',
     'CMHA',
-    'Other Community Partners'
+    'BGC',
+    'Foundry Kamloops',
+    'A New Tomorrow',
+    'United Way BC',
+    'Children Therapy'
   ];
   // values for the Core Values cards
   const values = [
-    { title: 'Purpose', text: 'We foster self-motivation, focus, and accountability in all we do.' },
-    { title: 'Resilience', text: 'We equip youth with tools and confidence to lead and succeed.' },
-    { title: 'Innovation', text: 'We strive for the highest standards in our programs and impact.' },
-    { title: 'Mentorship', text: 'We build strong, supportive networks for collective growth.' },
-    { title: 'Excellence', text: 'We act with honesty, transparency, and respect at all times.' },
-    { title: 'Discipline', text: 'We act with honesty, transparency, and respect at all times.' }
+    {
+      title: 'Purpose',
+      text: 'We help youth discover direction and meaning, guiding them to make intentional choices that shape their future.'
+    },
+    {
+      title: 'Resilience',
+      text: 'We build strength from challenges, teaching young people to adapt, stand tall, and keep striving despite obstacles.'
+    },
+    {
+      title: 'Innovation',
+      text: 'We encourage creativity and fresh thinking—opening doors to new ideas, solutions, and ways of learning or earning.'
+    },
+    {
+      title: 'Mentorship & Community',
+      text: 'We believe growth happens together. Through one-to-one and group mentorship, youth connect with role models and a community that truly cares.'
+    },
+    {
+      title: 'Excellence',
+      text: 'We promote high standards—pushing young people to believe in themselves, work hard, and consistently show up as their best.'
+    },
+    {
+      title: 'Discipline',
+      text: 'We foster consistency, focus, and positive habits that help young people stay committed to their goals and show up for themselves every day.'
+    }
   ];
 
   // refs for each card
@@ -104,15 +126,15 @@ function AboutUs() {
       <section className="aboutus-mission-vision">
         <div className="aboutus-mv-container">
           <div className="aboutus-mv-block aboutus-mv-mission">
-            <h2>Our Mission</h2>
+            <h2>Mission</h2>
             <p>
-              To empower youth with the skills, confidence, and opportunities they need to become leaders in their communities and beyond.
+              To empower young people ages 14 to 24, especially those in and transitioning out of care, through mentorship, skills development, and meaningful community connections that build confidence, purpose, and long term resilience.
             </p>
           </div>
           <div className="aboutus-mv-block aboutus-mv-vision">
-            <h2>Our Vision</h2>
+            <h2>Vision</h2>
             <p>
-              A world where every young person is inspired and equipped to reach their full potential and drive positive change.
+              A community where every young person feels supported, equipped, and inspired to reach their fullest potential and thrive in life, work, and society.
             </p>
           </div>
         </div>
@@ -120,7 +142,7 @@ function AboutUs() {
 
       {/* Core Values Section */}
       <section className="aboutus-values">
-        <h2 className="aboutus-values-title">Our Core Values</h2>
+        <h2 className="aboutus-values-title">PRIMED Core Values</h2>
         <div className="aboutus-values-cards">
           {values.map((value, index) => (
             <div
@@ -140,18 +162,10 @@ function AboutUs() {
         <h2 className="aboutus-team-title">Leadership Team</h2>
         <div className="aboutus-team-subtitle">Meet our dedicated board and coordinators</div>
         <div className="aboutus-team-grid">
-          {/* Board Members */}
           <div className="aboutus-team-member">
             <img src="/youth-leadership-img.jpg" alt="Valentine Uwakwe" className="aboutus-team-photo" />
             <div className="aboutus-team-name">Valentine Uwakwe</div>
-            <div className="aboutus-team-role">Founder<br/>Interior Academy, Kamloops Film Society ED, CMHA</div>
-          </div>
-          
-          {/* Coordinators */}
-          <div className="aboutus-team-member">
-            <img src="/youth-growth-img.jpg" alt="Abdul Mziya" className="aboutus-team-photo" />
-            <div className="aboutus-team-name">Abdul Mziya</div>
-            <div className="aboutus-team-role">Media & Communications Coordinator<br/>Branding, social media, website, publicity, storytelling</div>
+            <div className="aboutus-team-role">Founder / Executive Director</div>
           </div>
         </div>
       </section>
