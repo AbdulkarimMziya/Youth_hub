@@ -7,38 +7,42 @@ import PlanOfAction from '../pages/PlanOfAction';
 import Donate from '../pages/Donate';
 import Signup from '../pages/Signup';
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <RootLayout />,
+      children: [
+        {
+          index: true,
+          element: <Home />,
+        },
+        {
+          path: 'about-us',
+          element: <AboutUs />,
+        },
+        {
+          path: 'why-youth',
+          element: <WhyYouth />,
+        },
+        {
+          path: 'plan-of-action',
+          element: <PlanOfAction />, 
+        },
+        {
+          path: 'donate',
+          element: <Donate />,
+        },
+        {
+          path: 'signup',
+          element: <Signup />,
+        },
+      ],
+    },
+  ],
   {
-    path: '/',
-    element: <RootLayout />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: 'about-us',
-        element: <AboutUs />,
-      },
-      {
-        path: 'why-youth',
-        element: <WhyYouth />,
-      },
-      {
-        path: 'plan-of-action',
-        element: <PlanOfAction />, 
-      },
-      {
-        path: 'donate',
-        element: <Donate />,
-      },
-      {
-        path: 'signup',
-        element: <Signup />,
-      },
-
-    ],
-  },
-]);
+    basename: '/Youth_hub', 
+  }
+);
 
 export default router;
